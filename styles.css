@@ -27,35 +27,30 @@ body {
 }
 
 .ascii-container {
-    max-width: 100vw;
+    max-width: 100%;
     overflow-x: auto;
-  }
-  
-  .ascii-art {
     margin: 0 auto;
-    line-height: 1;
-    font-size: clamp(0.5rem, 2.5vw, 0.8rem); /* Responsive sizing */
-    white-space: pre;
-    overflow-x: auto;
+    text-align: center;
+}
+
+.ascii-art {
     display: inline-block;
     font-family: 'Courier New', monospace;
-    letter-spacing: -0.5px; /* Tighten character spacing */
-  }
-  
-  @media (max-width: 600px) {
-    .ascii-art {
-      font-size: clamp(0.4rem, 2vw, 0.7rem); /* More aggressive mobile scaling */
-      transform: scale(0.95); /* Minor uniform scaling */
-      transform-origin: left top;
-    }
-  }
+    font-size: clamp(0.5rem, 2.5vw, 0.8rem);
+    line-height: 1;
+    letter-spacing: -0.5px;
+    white-space: pre;
+    margin: 0;
+    padding: 0.5rem 0;
+}
 
-  @media (max-width: 400px) {
+@media (max-width: 600px) {
     .ascii-art {
-      content: "JAN 1073"; /* Fallback text */
-      white-space: normal;
+        font-size: clamp(0.4rem, 2vw, 0.7rem);
+        transform: scale(0.95);
+        transform-origin: center;
     }
-  }
+}
 
 a {
     color: var(--link);
