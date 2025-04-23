@@ -1,6 +1,0 @@
-<ul>
-  <li><a href="https://www.credly.com/badges/8354ef22-6812-422d-80d2-9c62951ed9db/public_url" target="_blank">Google Cloud Cybersecurity</a></li>
-  <li><a href="https://www.credly.com/badges/a5fe93d7-afb0-45f6-9a91-ab35696ce643/public_url" target="_blank">IBM Cybersecurity Analyst</a></li>
-  <li><a href="https://www.credly.com/badges/e837a313-978a-4c94-be3f-0bbf3558a31f/public_url" target="_blank">ISC2 CC</a></li>
-  <li><a href="https://coursera.org/share/2c30455713e6e5fc3f10117674d811ea" target="_blank">Microsoft IT Support Specialist</a></li>
-</ul>

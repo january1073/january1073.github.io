@@ -4,72 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/x-icon">
     <title>0xjanuary1073 || Jr Cybbersecurity Specialist</title>
-    <style>
-        body {  
-            background: #000;
-            color: #0f0;
-            font-family: 'Courier New', monospace;
-            line-height: 1.5;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            overflow-x: hidden;
-        }
-
-        a { color: #0f0; text-decoration: none; border-bottom: 1px dashed; }
-        a:hover { border-bottom: 1px solid; }
-        ::selection { background: #0f0; color: #000; }
-        pre { margin: 0; }
-        h1 { color: #0f0; font-weight: normal; }
-        ul { list-style-type: "> "; padding-left: 1rem; }
-        li { margin-bottom: 0.5rem; }
-
-        :root {
-        --bg: #000;
-        --text: #0f0;
-        --link: #0f0;
-        --selection-bg: #0f0;
-        --selection-text: #000;
-        }
-
-        [data-theme="light"] {
-        --bg: #f0f0f0;
-        --text: #333;
-        --link: #0066cc;
-        --selection-bg: #0066cc;
-        --selection-text: #fff;
-        }
-
-        body {
-        background: var(--bg);
-        color: var(--text);
-        transition: all 0.3s ease;
-        }
-
-        a { color: var(--link); }
-        ::selection {
-        background: var(--selection-bg);
-        color: var(--selection-text);
-        }
-
-        .theme-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        cursor: pointer;
-        }
-
-        @keyframes blink {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-        }
-        .signature::after {
-        content: "_";
-        animation: blink 1s step-end infinite;
-        color: #0f0;
-        }
-    </style>
 </head>
 <body>
     <pre>
@@ -110,4 +47,5 @@
     <div class="theme-toggle" onclick="document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light'">
         [◐]
     </div>
+
 </body>
