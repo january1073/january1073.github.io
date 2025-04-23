@@ -45,6 +45,13 @@ body {
     }
   }
 
+  @media (max-width: 400px) {
+    .ascii-art {
+      content: "JAN 1073"; /* Fallback text */
+      white-space: normal;
+    }
+  }
+
 a {
     color: var(--link);
     text-decoration: none;
