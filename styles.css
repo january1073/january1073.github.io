@@ -7,60 +7,73 @@
 }
   
 [data-theme="light"] {
---bg: #f0f0f0;
---text: #333;
---link: #0066cc;
---selection-bg: #0066cc;
---selection-text: #fff;
+    --bg: #f0f0f0;
+    --text: #333;
+    --link: #0066cc;
+    --selection-bg: #0066cc;
+    --selection-text: #fff;
 }
 
 body {
-background: var(--bg);
-color: var(--text);
-font-family: 'Courier New', monospace;
-line-height: 1.5;
-max-width: 800px;
-margin: 0 auto;
-padding: 2rem;
-overflow-x: hidden;
-transition: all 0.3s ease;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.ascii-art {
+    margin: 0 auto; /* Center align */
+    line-height: 1.2; /* Tighter spacing */
+    user-select: none; /* Prevent text selection */
+}
+
+@media (max-width: 600px) {
+    .ascii-art {
+      font-size: 0.7rem;
+      white-space: pre-wrap;
+    }
 }
 
 a {
-color: var(--link);
-text-decoration: none;
-border-bottom: 1px dashed;
-background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 1px;
-transition: background-size 0.3s;
+    color: var(--link);
+    text-decoration: none;
+    border-bottom: 1px dashed;
+    background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 1px;
+    transition: background-size 0.3s;
 }
 
 a:hover {
-border-bottom: 1px solid;
-background-size: 100% 1px;
-background-position-x: left;
+    border-bottom: 1px solid;
+    background-size: 100% 1px;
+    background-position-x: left;
 }
 
 ::selection {
-background: var(--selection-bg);
-color: var(--selection-text);
+    background: var(--selection-bg);
+    color: var(--selection-text);
 }
 
 pre {
-margin: 0;
+    margin: 0;
 }
 
 h1 {
-color: #0f0;
-font-weight: normal;
+    color: #0f0;
+    font-weight: normal;
 }
 
 ul {
-list-style-type: "> ";
-padding-left: 1rem;
+    list-style-type: "> ";
+    padding-left: 1rem;
 }
 
 li {
-margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .theme-toggle {
