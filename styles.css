@@ -27,17 +27,23 @@ body {
 }
 
 .ascii-art {
-    margin: 0 auto; /* Center align */
-    line-height: 1.2; /* Tighter spacing */
-    user-select: none; /* Prevent text selection */
-}
-
-@media (max-width: 600px) {
+    margin: 0 auto;
+    line-height: 1;
+    font-size: clamp(0.5rem, 2.5vw, 0.8rem); /* Responsive sizing */
+    white-space: pre;
+    overflow-x: auto;
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    letter-spacing: -0.5px; /* Tighten character spacing */
+  }
+  
+  @media (max-width: 600px) {
     .ascii-art {
-      font-size: 0.7rem;
-      white-space: pre-wrap;
+      font-size: clamp(0.4rem, 2vw, 0.7rem); /* More aggressive mobile scaling */
+      transform: scale(0.95); /* Minor uniform scaling */
+      transform-origin: left top;
     }
-}
+  }
 
 a {
     color: var(--link);
