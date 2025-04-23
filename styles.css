@@ -30,10 +30,14 @@ a {
 color: var(--link);
 text-decoration: none;
 border-bottom: 1px dashed;
+background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 1px;
+transition: background-size 0.3s;
 }
 
 a:hover {
 border-bottom: 1px solid;
+background-size: 100% 1px;
+background-position-x: left;
 }
 
 ::selection {
