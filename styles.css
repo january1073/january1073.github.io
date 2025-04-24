@@ -1,19 +1,23 @@
 /* Default: Light Mode Settings */
 :root {
-    --bg: #f8f8f8; /* Light background */
-    --text: #333;
-    --link: #0066cc;
-    --selection-bg: #0066cc;
+    --bg: #f8f8f8;
+    --text: #222222;
+    --link: #9a0000;
+    --selection-bg: #9a0000;
     --selection-text: #fff;
+    --terminal-accent: #800000;
+    --border-color: #d0d0d0;
   }
   
   /* Dark Mode Overrides */
   [data-theme="dark"] {
-    --bg: #000;
-    --text: #0f0;
-    --link: #0f0;
-    --selection-bg: #0f0;
+    --bg: #000000;
+    --text: #cc0000;
+    --link: #cc0000;
+    --selection-bg: #cc0000;
     --selection-text: #000;
+    --terminal-accent: #cc0000;
+    --border-color: #330000;
   }
   
   /* Global Base Styles */
@@ -158,5 +162,6 @@
   .signature::after {
     content: "_";
     animation: blink 1s step-end infinite;
-    color: #8B0000;
+    color: var(--cursor);
+    text-shadow: 0 0 8px var(--cursor), 0 0 12px var(--cursor);
   }  
