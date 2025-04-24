@@ -47,7 +47,7 @@ h1 {
   max-width: 100%;
   overflow-x: auto;
   margin: 0 auto;
-  text-align: center;
+  text-align: start;
 }
 
 .ascii-art {
