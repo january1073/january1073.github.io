@@ -1,17 +1,17 @@
 :root {
-    --bg: #000;
-    --text: #0f0;
-    --link: #0f0;
-    --selection-bg: #0f0;
-    --selection-text: #000;
-}
-  
-[data-theme="light"] {
     --bg: #f0f0f0;
     --text: #333;
     --link: #0066cc;
     --selection-bg: #0066cc;
     --selection-text: #fff;
+}
+
+[data-theme="dark"] {
+    --bg: #000;
+    --text: #0f0;
+    --link: #0f0;
+    --selection-bg: #0f0;
+    --selection-text: #000;
 }
 
 body {
