@@ -11,13 +11,13 @@
   
   /* Dark Mode Overrides */
   [data-theme="dark"] {
-    --bg: #000000;
-    --text: #cc0000;
-    --link: #cc0000;
-    --selection-bg: #cc0000;
-    --selection-text: #000;
-    --terminal-accent: #cc0000;
-    --border-color: #330000;
+    --bg: #1a0000;           /* Dark red-black for a commanding military feel */
+    --text: #ff2d2d;         /* Bright, strong red for high visibility */
+    --link: #ff5555;         /* Slightly softer red to differentiate links */
+    --selection-bg: #990000; /* Deep crimson selection background */
+    --selection-text: #fff;  /* White text for high contrast */
+    --terminal-accent: #ff0000; /* Sharp red for terminal elements */
+    --border-color: #660000; /* Dark red borders for definition */
   }
   
   /* Global Base Styles */
@@ -116,7 +116,7 @@
     top: 20px;
     right: 20px;
     cursor: pointer;
-    font-size: 1.5rem; /* Increase size */
+    font-size: 1.2rem; /* Increase size */
     padding: 10px; /* Adds spacing */
     display: inline-block;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
