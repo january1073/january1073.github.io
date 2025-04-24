@@ -1,20 +1,23 @@
+/* Default: Light Mode Settings */
 :root {
-    --bg: #f0f0f0;
+    --bg: #f8f8f8; /* Light background */
     --text: #333;
     --link: #0066cc;
     --selection-bg: #0066cc;
     --selection-text: #fff;
-}
-
-[data-theme="dark"] {
+  }
+  
+  /* Dark Mode Overrides */
+  [data-theme="dark"] {
     --bg: #000;
     --text: #0f0;
     --link: #0f0;
     --selection-bg: #0f0;
     --selection-text: #000;
-}
-
-body {
+  }
+  
+  /* Global Base Styles */
+  body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Courier New', monospace;
@@ -24,17 +27,32 @@ body {
     padding: 2rem;
     overflow-x: hidden;
     transition: all 0.3s ease;
-}
-
-.ascii-container {
-    -webkit-overflow-scrolling: touch; /* test on smartphone */
+  }
+  
+  /* Apply the custom background pattern for light mode only */
+  body:not([data-theme="dark"]) {
+    background: 
+      linear-gradient(rgba(248, 248, 248, 0.9), rgba(248, 248, 248, 0.9)),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 10a5 5 0 0 1 5 5v30a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V15a5 5 0 0 1 5-5h20zm0 2H10a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3V15a3 3 0 0 0-3-3z' fill='%239a0000' fill-opacity='0.08'/%3E%3Cpath d='M50 10a5 5 0 0 1 5 5v30a5 5 0 0 1-5 5H30a5 5 0 0 1-5-5V15a5 5 0 0 1 5-5h20zm0 2H30a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3V15a3 3 0 0 0-3-3z' fill='%239a0000' fill-opacity='0.08'/%3E%3Cpath d='M10 30h40M30 10v40' stroke='%23800000' stroke-opacity='0.12' stroke-width='0.5'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+  }
+  
+  /* Deep Crimson Headings */
+  h1 {
+    color: #8B0000;
+    font-weight: normal;
+  }
+  
+  /* ASCII Art Container & Styling */
+  .ascii-container {
+    -webkit-overflow-scrolling: touch;
     max-width: 100%;
     overflow-x: auto;
     margin: 0 auto;
     text-align: center;
-}
-
-.ascii-art {
+  }
+  
+  .ascii-art {
     display: inline-block;
     font-family: 'Courier New', monospace;
     font-size: clamp(0.5rem, 2.5vw, 0.8rem);
@@ -43,106 +61,102 @@ body {
     white-space: pre;
     margin: 0;
     padding: 0.5rem 0;
-}
-
-@media (max-width: 600px) {
-    .ascii-art {
-        font-size: clamp(0.4rem, 2vw, 0.7rem);
-        transform: scale(0.95);
-        transform-origin: center;
-    }
-}
-
-.timestamp {
+  }
+  
+  /* Timestamp Styling */
+  .timestamp {
     font-family: monospace;
     color: #666;
     font-size: 0.9rem;
-}
-
-a {
+  }
+  
+  /* Link Styling */
+  a {
     color: var(--link);
     text-decoration: none;
     border-bottom: 1px dashed;
     background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 1px;
     transition: background-size 0.3s;
-}
-
-a:hover {
+  }
+  
+  a:hover {
     border-bottom: 1px solid;
     background-size: 100% 1px;
     background-position-x: left;
-}
-
-::selection {
+  }
+  
+  /* Selection Colors */
+  ::selection {
     background: var(--selection-bg);
     color: var(--selection-text);
-}
-
-pre {
+  }
+  
+  /* Preformatted Text */
+  pre {
     margin: 0;
-}
-
-h1 {
-    color: #0f0;
-    font-weight: normal;
-}
-
-ul {
+  }
+  
+  /* List Styling */
+  ul {
     list-style-type: "> ";
     padding-left: 1rem;
-}
-
-li {
+  }
+  
+  li {
     margin-bottom: 0.5rem;
-}
-
-.theme-toggle {
+  }
+  
+  /* Theme Toggle Button */
+  .theme-toggle {
     position: fixed;
     top: 20px;
     right: 20px;
     cursor: pointer;
-}
-
-@media (max-width: 600px) {
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 600px) {
     body {
-        padding: 1rem;
-        font-size: 0.9rem; /* Slightly smaller text on mobile */
+      padding: 1rem;
+      font-size: 0.9rem;
     }
     
     pre {
-        font-size: 0.7rem; /* Prevent ASCII art overflow */
-        white-space: pre-wrap; /* Wrap long lines */
+      font-size: 0.7rem;
+      white-space: pre-wrap;
     }
-
+  
     ul {
-        padding-left: 1.2rem; /* Slightly indent lists */
+      padding-left: 1.2rem;
     }
-}
-
-@media print {
+  }
+  
+  /* Print Styles */
+  @media print {
     .theme-toggle,
     .signature::after {
-        display: none;
-}
-
-body {
-    --bg: #fff !important;
-    --text: #000 !important;
-    --link: #0066cc !important;
-}
-
-    a {
-        border-bottom: none;
+      display: none;
     }
-}
-
-@keyframes blink {
+    
+    body {
+      --bg: #fff !important;
+      --text: #000 !important;
+      --link: #0066cc !important;
+    }
+    
+    a {
+      border-bottom: none;
+    }
+  }
+  
+  /* Blinking Cursor Animation for Signature */
+  @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
-}
-
-.signature::after {
+  }
+  
+  .signature::after {
     content: "_";
     animation: blink 1s step-end infinite;
-    color: #0f0;
-}
+    color: #8B0000;
+  }  
