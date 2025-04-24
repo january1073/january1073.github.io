@@ -1,0 +1,6 @@
+Contact: mailto:january1073@proton.me
+Expires: 2025-12-31T22:59:00.000Z
+Encryption: https://keys.openpgp.org/vks/v1/by-fingerprint/56F2FDCC2EF4D52A3F597815AE34888E8EDC586C
+Preferred-Languages: en
+Canonical: https://january1073.github.io/.well-known/security.txt
+Policy: https://github.com/january1073/january1073.github.io/security/policy
