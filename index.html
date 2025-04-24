@@ -22,6 +22,7 @@
              1 0 7 3
         </pre>
     </div>
+    <p class="timestamp">Last updated: <span id="last-updated"></span></p>
     <h1>> whoami</h1>
     <p>Jr Cybersecurity Specialist | Google Cloud, IBM, & ISC2 Certified | THM</p>
 
@@ -46,11 +47,24 @@
     <h1>> cat contact.txt</h1>
     <p>Email: <a href="mailto:january1073@proton.me">january1073@proton.me</a></p>
     <p>PGP: <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/56F2FDCC2EF4D52A3F597815AE34888E8EDC586C">0xDEADBEEF</a> (Fingerprint: 56F2 FDCC 2EF4 D52A 3F59 7815 AE34 888E 8EDC 586C)</p>
+    <p>Security: <a href="/well-known/security.txt">Responsible Disclosure Policy</a></p>
+    </a>
 
     <h1 class="signature">> </h1>
 
     <div class="theme-toggle" onclick="document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light'">
         [◐]
     </div>
+
+    
+    <script>
+        fetch('https://api.github.com/repos/january1073/january1073.github.io/commits/main')
+          .then(r => r.json())
+          .then(data => {
+            const lastCommit = new Date(data.commit.committer.date);
+            document.getElementById('last-updated').textContent = 
+              lastCommit.toISOString().split('T')[0];
+          });
+    </script>
 
 </body>
