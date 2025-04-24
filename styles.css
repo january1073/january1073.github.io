@@ -116,6 +116,18 @@
     top: 20px;
     right: 20px;
     cursor: pointer;
+    font-size: 1.5rem; /* Increase size */
+    padding: 10px; /* Adds spacing */
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+.theme-toggle:hover {
+    transform: scale(1.2) rotate(3deg);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
   }
   
   /* Responsive Adjustments */
