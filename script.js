@@ -79,7 +79,7 @@ whoareuButton.addEventListener('click', function() {
   info += `Pixel Depth: ${screen.pixelDepth} bits\n`;
   if (screen.orientation) info += `Orientation: ${screen.orientation.type}\n`;
 
-  info += "\nFor your information only. I do not track visitors.";
+  info += "\n### For your information only. I do not track visitors. ###";
 
   outputDiv.textContent = info;
   outputDiv.style.display = 'block'; // Make the output div visible
