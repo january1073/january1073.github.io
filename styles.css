@@ -10,15 +10,26 @@
 }
 
 [data-theme="dark"] {
-  --bg: #1a0000;
+  --bg: #000000;
   --h1-color: #ff0000;
   --text: #ff0000;
   --link: #ff0000;
-  --selection-bg: #990000;
-  --selection-text: #fff;
+  --selection-bg: #ff0000;
+  --selection-text: #000000;
   --terminal-accent: #ff0000;
-  --border-color: #660000;
+  --border-color: #000000;
 }
+
+/* [data-theme="dark"] {
+  --bg: #000000;
+  --h1-color: #00ff00;
+  --text: #00ff00;
+  --link: #00ff00;
+  --selection-bg: #00ff00;
+  --selection-text: #000000;
+  --terminal-accent: #00ff00;
+  --border-color: #000000;
+} */
 
 body {
   background: var(--bg);
