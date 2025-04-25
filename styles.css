@@ -9,6 +9,7 @@
   --border-color: #d0d0d0;
 }
 
+/* Red team */
 /* [data-theme="dark"] {
   --bg: #000000;
   --h1-color: #ff0000;
@@ -20,6 +21,31 @@
   --border-color: #000000;
 } */
 
+/* Blue team */
+/* [data-theme="dark"] {
+  --bg: #000000;
+  --h1-color: #0000ff;
+  --text: #0000ff;
+  --link: #0000ff;
+  --selection-bg: #0000ff;
+  --selection-text: #000000;
+  --terminal-accent: #0000ff;
+  --border-color: #000000;
+} */
+
+/* Purple team */
+/* [data-theme="dark"] {
+  --bg: #000000;
+  --h1-color: #ff00ff;
+  --text: #ff00ff;
+  --link: #ff00ff;
+  --selection-bg: #ff00ff;
+  --selection-text: #000000;
+  --terminal-accent: #ff00ff;
+  --border-color: #000000;
+} */
+
+/* Green elite */
 [data-theme="dark"] {
   --bg: #000000;
   --h1-color: #00ff00;
