@@ -1,7 +1,7 @@
 ## Key takeaways from my projects
 
 ### From Panic to Action — How to Recover from a GCP Data Breach
-#### Skill Demonstrated
+#### Skills Demonstrated
 * Cloud security incident response and remediation
 * Use of Google Cloud Security Command Center
 * Firewall and VM configuration
@@ -14,7 +14,7 @@
 * Documenting incidents for compliance and future prevention
 
 ### Finding Flaws 101 — Scanning Metasploitable2 with Nessus Pro
-#### Skill Demonstrated
+#### Skills Demonstrated
 * Setting up virtual environments for vulnerability assessment
 * Deploying Nessus Professional via Docker
 * Conducting vulnerability scans on Metasploitable2
