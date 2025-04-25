@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Attach function to button
+// Attach function to toggle-icon
 document.querySelector(".theme-toggle").addEventListener("click", toggleTheme);
 
-// Interface
+// Interface with button
 const whoareuButton = document.getElementById('whoareubutton');
 const outputDiv = document.getElementById('output');
 
