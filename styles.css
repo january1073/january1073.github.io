@@ -120,6 +120,21 @@ a:hover {
   color: var(--selection-text);
 }
 
+h1 {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #666 0%, rgba(0,0,0,0) 100%);
+}
+
 pre {
   margin: 0;
 }
