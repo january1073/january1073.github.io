@@ -1,5 +1,6 @@
 :root {
   --bg: #f8f8f8;
+  --h1-color: #990000;
   --text: #222222;
   --link: #9a0000;
   --selection-bg: #9a0000;
@@ -10,8 +11,9 @@
 
 [data-theme="dark"] {
   --bg: #1a0000;
-  --text: #ff2d2d;
-  --link: #ff5555;
+  --h1-color: #ff0000;
+  --text: #ff0000;
+  --link: #ff0000;
   --selection-bg: #990000;
   --selection-text: #fff;
   --terminal-accent: #ff0000;
@@ -35,11 +37,6 @@ body:not([data-theme="dark"]) {
     linear-gradient(rgba(248, 248, 248, 0.9), rgba(248, 248, 248, 0.9)),
     url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 10a5 5 0 0 1 5 5v30a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V15a5 5 0 0 1 5-5h20zm0 2H10a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3V15a3 3 0 0 0-3-3z' fill='%239a0000' fill-opacity='0.08'/%3E%3Cpath d='M50 10a5 5 0 0 1 5 5v30a5 5 0 0 1-5 5H30a5 5 0 0 1-5-5V15a5 5 0 0 1 5-5h20zm0 2H30a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3V15a3 3 0 0 0-3-3z' fill='%239a0000' fill-opacity='0.08'/%3E%3Cpath d='M10 30h40M30 10v40' stroke='%23800000' stroke-opacity='0.12' stroke-width='0.5'/%3E%3C/svg%3E");
   background-size: 60px 60px;
-}
-
-h1 {
-  color: #8B0000;
-  font-weight: normal;
 }
 
 .ascii-container {
