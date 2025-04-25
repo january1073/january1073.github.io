@@ -75,6 +75,13 @@ whoareuButton.addEventListener('click', function() {
     if (screen.orientation && screen.orientation.type) info += `Orientation: ${screen.orientation.type}\n`;
 
     outputDiv.textContent = info;
+
+    // Add simple privacy message
+    const privacyMsg = document.createElement('p');
+    privacyMsg.textContent = 'Surf safely and protect yourself! Learn more: https://ssd.eff.org';
+    privacyMsg.style.marginTop = '1em';
+    outputDiv.appendChild(privacyMsg);
+
     outputDiv.style.display = 'block';
     whoareuButton.textContent = 'Hide';
     isOutputVisible = true;
