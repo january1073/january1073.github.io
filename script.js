@@ -27,3 +27,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Attach function to button
 document.querySelector(".theme-toggle").addEventListener("click", toggleTheme);
+
+// Interface
+const whoareuButton = document.getElementById('whoareubutton');
+const outputDiv = document.getElementById('output');
+
+whoareuButton.addEventListener('click', function() {
+  outputDiv.innerHTML = ''; // Clear previous output (if it was visible before)
+
+  let info = "Information your browser directly sends:\n\n";
+
+  // Browser Information (User-Agent)
+  info += `User-Agent: ${navigator.userAgent}\n`;
+
+  // Referrer (if available)
+  if (document.referrer) {
+    info += `Referrer: ${document.referrer}\n`;
+  } else {
+    info += `Referrer: (None or directly accessed)\n`;
+  }
+
+  // Language Preferences
+  info += `Language: ${navigator.language}\n`;
+  info += `Languages: ${navigator.languages}\n`;
+
+  // Screen Information (basic)
+  info += `Screen Width: ${screen.width}px\n`;
+  info += `Screen Height: ${screen.height}px\n`;
+  info += `Color Depth: ${screen.colorDepth} bits\n`;
+
+  outputDiv.textContent = info;
+  outputDiv.style.display = 'block'; // Make the output div visible
+});

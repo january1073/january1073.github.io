@@ -120,21 +120,6 @@ a:hover {
   color: var(--selection-text);
 }
 
-h1 {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 1px;
-  width: 100%;
-  background: linear-gradient(90deg, #666 0%, rgba(0,0,0,0) 100%);
-}
-
 pre {
   margin: 0;
 }
@@ -220,3 +205,73 @@ li {
   color: var(--cursor);
   text-shadow: 0 0 8px var(--cursor), 0 0 12px var(--cursor);
 }
+
+Okay, let's add the functionality to toggle between your light and dark themes. We'll need to:
+
+    Add a theme toggle button (e.g., a checkbox or a button).
+    Use JavaScript to detect changes to the toggle.
+    Update the data-theme attribute of the <body> element based on the toggle state.
+    Define your theme styles based on the data-theme attribute in your CSS.
+
+Here's the updated HTML and JavaScript:
+HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Who Are You?</title>
+<style>
+  :root {
+    --bg: #f8f8f8;
+    --h1-color: #990000;
+    --text: #222222;
+    --link: #9a0000;
+    --selection-bg: #9a0000;
+    --selection-text: #fff;
+    --terminal-accent: #800000;
+    --border-color: #d0d0d0;
+  }
+
+  [data-theme="dark"] {
+    --bg: #000000;
+    --h1-color: #00ff00;
+    --text: #00ff00;
+    --link: #00ff00;
+    --selection-bg: #00ff00;
+    --selection-text: #000000;
+    --terminal-accent: #00ff00;
+    --border-color: #00ff00;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
+  }
+
+  .interface {
+    border: 1px solid var(--border-color); /* Use theme's border color */
+    color: var(--text); /* Use theme's text color for the font */
+    padding: 5px 10px;
+  }
+
+  #output {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    font-family: monospace;
+    white-space: pre-wrap; /* Preserve formatting and wrap text */
+    color: var(--terminal-accent); /* Let's give the output an accent color */
+    display: none; /* Initially hide the output div */
+    transition: border-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
+  }
+
+  button#whoareubutton {
+    background-color: transparent; /* Still transparent */
+    border: 1px solid var(--border-color); /* Use theme's border color */
+    color: var(--text); /* Use theme's text color for the font */
+    border-radius: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Add some space below the button */
+    transition: border-color 0.3s ease, color 0.3s ease; /* Smooth transition for theme change */
+  }
