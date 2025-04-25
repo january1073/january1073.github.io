@@ -273,9 +273,9 @@ HTML
     padding: 5px 10px;
     cursor: pointer;
     margin-bottom: 10px;
-    transition: border-color 0.2s ease-in-out; /* Smooth transition */
+    transition: border-color 0.2s ease-in-out;
   }
   
   button#whoareubutton:hover {
-    border-color: color-mix(in srgb, var(--border-color) 50%, black); /* Mix with black to darken */
+    border-color: color-mix(in srgb, var(--border-color) 50%, black);
   }
