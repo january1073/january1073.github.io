@@ -62,7 +62,7 @@ whoareuButton.addEventListener('click', function() {
     if (document.referrer) {
       info += `\nReferrer: ${document.referrer}\n`;
     } else {
-      info += `\nReferrer: (None or directly accessed)\n`;
+      info += `\nReferrer: (none or directly accessed)\n`;
     }
 
     info += "\n**Screen Object:**\n";
