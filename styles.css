@@ -206,49 +206,6 @@ li {
   text-shadow: 0 0 8px var(--cursor), 0 0 12px var(--cursor);
 }
 
-Okay, let's add the functionality to toggle between your light and dark themes. We'll need to:
-
-    Add a theme toggle button (e.g., a checkbox or a button).
-    Use JavaScript to detect changes to the toggle.
-    Update the data-theme attribute of the <body> element based on the toggle state.
-    Define your theme styles based on the data-theme attribute in your CSS.
-
-Here's the updated HTML and JavaScript:
-HTML
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Who Are You?</title>
-<style>
-  :root {
-    --bg: #f8f8f8;
-    --h1-color: #990000;
-    --text: #222222;
-    --link: #9a0000;
-    --selection-bg: #9a0000;
-    --selection-text: #fff;
-    --terminal-accent: #800000;
-    --border-color: #d0d0d0;
-  }
-
-  [data-theme="dark"] {
-    --bg: #000000;
-    --h1-color: #00ff00;
-    --text: #00ff00;
-    --link: #00ff00;
-    --selection-bg: #00ff00;
-    --selection-text: #000000;
-    --terminal-accent: #00ff00;
-    --border-color: #00ff00;
-  }
-
-  body {
-    background-color: var(--bg);
-    color: var(--text);
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
   .interface {
     display: inline-block;
     border: 1px solid var(--border-color);
