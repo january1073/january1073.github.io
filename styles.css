@@ -253,7 +253,7 @@ HTML
     display: inline-block;
     border: 1px solid var(--border-color);
     color: var(--text);
-    padding: 10px 20px;
+    padding: 5px 10px;
   }
 
   #output {
