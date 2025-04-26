@@ -21,19 +21,19 @@
   --border-color: #000000;
 } */
 
-/* Blue team */
-/* [data-theme="dark"] {
+/* Cyan team */
+[data-theme="dark"] {
   --bg: #000000;
-  --h1-color: #0000ff;
-  --text: #0000ff;
-  --link: #0000ff;
-  --selection-bg: #0000ff;
+  --h1-color: #00ffff;
+  --text: #00ffff;
+  --link: #00ffff;
+  --selection-bg: #00ffff;
   --selection-text: #000000;
-  --terminal-accent: #0000ff;
+  --terminal-accent: #00ffff;
   --border-color: #000000;
-} */
+}
 
-/* Purple team */
+/* Pink team */
 /* [data-theme="dark"] {
   --bg: #000000;
   --h1-color: #ff00ff;
@@ -46,7 +46,7 @@
 } */
 
 /* Green elite */
-[data-theme="dark"] {
+/* [data-theme="dark"] {
   --bg: #000000;
   --h1-color: #00ff00;
   --text: #00ff00;
@@ -55,7 +55,7 @@
   --selection-text: #000000;
   --terminal-accent: #00ff00;
   --border-color: #000000;
-}
+} */
 
 body {
   background: var(--bg);
