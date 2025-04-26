@@ -206,35 +206,36 @@ li {
   text-shadow: 0 0 8px var(--cursor), 0 0 12px var(--cursor);
 }
 
-.accordion-container {
-  margin: 1em 0;
-  font-family: Arial, sans-serif;
-}
-
 .accordion-header {
-  background: #f9f9f9;
-  padding: 0.5em;
   cursor: pointer;
-  border-radius: 5px;
-  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px; 
 }
 
 .accordion-arrow {
-  font-size: 20px;
   transition: transform 0.3s ease;
   transform: rotate(0deg);
 }
 
 .accordion-body {
   display: none;
-  border: 1px solid var(--border-color);
   color: var(--text);
-  padding: 5px 10px;
-  margin-top: 0.5em;
+}
+
+.accordion-body {
+  overflow-x: auto;
+}
+
+.accordion-body pre {
+  font-family: 'Courier New', monospace;
+  font-size: clamp(0.6rem, 2vw, 0.9rem);
+  line-height: 1.2;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  white-space: pre; /* Important: no wrapping */
+  box-sizing: border-box;
 }
 
 .accordion-body.visible {
@@ -246,25 +247,10 @@ li {
 }
 
 .tree {
-  font-family: monospace;
+  font-family: 'Courier New', monospace;
   white-space: pre;
-  line-height: 1.5;
-  margin: 20px;
-}
-.branch {
-  position: relative;
-  padding-left: 20px;
-}
-.branch::before {
-  content: "├── ";
-  position: absolute;
-  left: 0;
-}
-.branch:last-child::before {
-  content: "└── ";
-}
-.indent {
-  padding-left: 20px;
+  line-height: 1.2; /* a bit taller, looks cleaner */
+  font-size: clamp(0.6rem, 2vw, 0.9rem);
 }
 
 .interface {

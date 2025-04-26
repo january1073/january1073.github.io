@@ -27,7 +27,7 @@ const accordionBody = document.getElementById('accordionBody');
 
 accordionHeader.addEventListener('click', () => {
   accordionBody.classList.toggle('visible');
-  accordionHeader.classList.toggle('active'); // Klasse toggeln für Pfeil drehen
+  accordionHeader.classList.toggle('active');
 });
 
 const whoareuButton = document.getElementById('whoareubutton');
