@@ -37,9 +37,8 @@ let isOutputVisible = false;
 whoareuButton.addEventListener('click', function() {
   outputDiv.innerHTML = '';
 
-    let info = '// For your information only. I do not track visitors.\n\n';
-
   if (!isOutputVisible) {
+    let info = '';
     info += "Information your browser directly sends:\n\n";
 
     if (navigator.userAgent) info += `User-Agent: ${navigator.userAgent}\n`;
@@ -82,12 +81,12 @@ whoareuButton.addEventListener('click', function() {
     if (screen.pixelDepth) info += `Pixel Depth: ${screen.pixelDepth} bits\n`;
     if (screen.orientation && screen.orientation.type) info += `Orientation: ${screen.orientation.type}\n`;
 
+    // --- add blank line AFTER orientation, BEFORE information notice ---
+    info += `\n`; 
+    info += "// For your information only. I do not track visitors.\n";
+    info += "// Surf safely and protect yourself! Learn more: https://ssd.eff.org";
+
     outputDiv.textContent = info;
-    
-    const privacyMsg = document.createElement('p');
-    privacyMsg.textContent = '// Surf safely and protect yourself! Learn more: https://ssd.eff.org';
-    privacyMsg.style.marginTop = '1em';
-    outputDiv.appendChild(privacyMsg);
 
     outputDiv.style.display = 'block';
     whoareuButton.textContent = 'Hide';
