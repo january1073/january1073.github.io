@@ -175,6 +175,7 @@ li {
   ul {
     padding-left: 1.2rem;
   }
+}
 
 @media print {
   .theme-toggle,
@@ -191,6 +192,7 @@ li {
   a {
     border-bottom: none;
   }
+}
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
