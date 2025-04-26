@@ -225,8 +225,7 @@ li {
 }
 
 .accordion-arrow {
-  font-size: 20px;
-  color: var(--text);
+  transition: transform 0.5s ease;
 }
 
 .arrow-space {
