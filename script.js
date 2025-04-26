@@ -86,9 +86,23 @@ whoareuButton.addEventListener('click', function() {
     info += "// For your information only. I do not track visitors.\n";
     info += "// Surf safely and protect yourself! Learn more: https://ssd.eff.org";
 
+    // Adding content gradually (fade-in effect)
     outputDiv.textContent = info;
-
+    outputDiv.style.opacity = 0;
     outputDiv.style.display = 'block';
+
+    // Trigger fade-in after a very small delay
+    setTimeout(() => {
+      outputDiv.style.transition = "opacity 1s ease-in-out";
+      outputDiv.style.opacity = 1;
+    }, 10);
+
+    // Scroll the page to the output section
+    window.scrollTo({
+        top: outputDiv.offsetTop - 20, // Adjust the offset to add a little margin above
+        behavior: "smooth" // Smooth scroll effect
+    });
+
     whoareuButton.textContent = 'Hide';
     isOutputVisible = true;
   } else {
