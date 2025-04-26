@@ -22,6 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.querySelector(".theme-toggle").addEventListener("click", toggleTheme);
 
+const accordionHeader = document.getElementById('accordionHeader');
+const accordionBody = document.getElementById('accordionBody');
+
+accordionHeader.addEventListener('click', () => {
+  accordionBody.classList.toggle('visible');
+});
+
 const whoareuButton = document.getElementById('whoareubutton');
 const outputDiv = document.getElementById('output');
 let isOutputVisible = false;

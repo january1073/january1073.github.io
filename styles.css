@@ -206,6 +206,28 @@ li {
   text-shadow: 0 0 8px var(--cursor), 0 0 12px var(--cursor);
 }
 
+.accordion-container {
+  margin: 1em 0;
+  font-family: Arial, sans-serif;
+}
+
+.accordion-header {
+  background: #f9f9f9;
+  padding: 0.5em;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.accordion-body {
+  display: none;
+  margin-top: 0.5em;
+}
+
+.accordion-body.visible {
+  display: block;
+}
+
 .interface {
   display: inline-block;
   border: 1px solid var(--border-color);
