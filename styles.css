@@ -220,7 +220,7 @@ li {
 }
 
 .accordion-header:hover .accordion-arrow {
-  transform: rotate(20deg);
+  transform: scale(1.2);
 }
 
 .arrow-space {
