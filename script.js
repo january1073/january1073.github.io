@@ -33,7 +33,6 @@ accordionHeader.addEventListener('click', () => {
   );
 
   if (!accordionBody.classList.contains('visible')) {
-    // Show with fade-in
     accordionBody.style.opacity = 0;
     accordionBody.style.display = 'block';
     
@@ -45,32 +44,28 @@ accordionHeader.addEventListener('click', () => {
     accordionBody.classList.add('visible');
     accordionHeader.classList.add('active');
 
-    // Scroll if header not fully visible
     if (!isHeaderVisible) {
       setTimeout(() => {
         accordionHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Optional: add a little manual offset afterwards
-        setTimeout(() => window.scrollBy(0, -20), 500); // tiny scroll up
+        setTimeout(() => window.scrollBy(0, -20), 500);
       }, 100);
     }
 
   } else {
-    // Fade out
     accordionBody.style.transition = 'opacity 1s ease-in-out';
     accordionBody.style.opacity = 0;
 
     setTimeout(() => {
       accordionBody.style.display = 'none';
       accordionBody.classList.remove('visible');
-    }, 1000); // after fade-out
+    }, 1000);
 
     accordionHeader.classList.remove('active');
 
-    // Optional: when closing, scroll back up to header
     if (!isHeaderVisible) {
       setTimeout(() => {
         accordionHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(() => window.scrollBy(0, -20), 500); // tiny scroll up
+        setTimeout(() => window.scrollBy(0, -20), 500);
       }, 100);
     }
   }
@@ -127,26 +122,22 @@ whoareuButton.addEventListener('click', function() {
     if (screen.pixelDepth) info += `Pixel Depth: ${screen.pixelDepth} bits\n`;
     if (screen.orientation && screen.orientation.type) info += `Orientation: ${screen.orientation.type}\n`;
 
-    // --- add blank line AFTER orientation, BEFORE information notice ---
     info += `\n`; 
     info += "// For your information only. I do not track visitors.\n";
     info += "// Surf safely and protect yourself! Learn more: https://ssd.eff.org";
 
-    // Adding content gradually (fade-in effect)
     outputDiv.textContent = info;
     outputDiv.style.opacity = 0;
     outputDiv.style.display = 'block';
 
-    // Trigger fade-in after a very small delay
     setTimeout(() => {
       outputDiv.style.transition = "opacity 1s ease-in-out";
       outputDiv.style.opacity = 1;
     }, 10);
 
-    // Scroll the page to the output section
     window.scrollTo({
-        top: outputDiv.offsetTop - 20, // Adjust the offset to add a little margin above
-        behavior: "smooth" // Smooth scroll effect
+        top: outputDiv.offsetTop - 20,
+        behavior: "smooth"
     });
 
     whoareuButton.textContent = 'Hide';
