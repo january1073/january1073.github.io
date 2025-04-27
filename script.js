@@ -26,8 +26,54 @@ const accordionHeader = document.getElementById('accordionHeader');
 const accordionBody = document.getElementById('accordionBody');
 
 accordionHeader.addEventListener('click', () => {
-  accordionBody.classList.toggle('visible');
-  accordionHeader.classList.toggle('active');
+  const headerRect = accordionHeader.getBoundingClientRect();
+  const isHeaderVisible = (
+    headerRect.top >= 0 &&
+    headerRect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+  );
+
+  if (!accordionBody.classList.contains('visible')) {
+    // Show with fade-in
+    accordionBody.style.opacity = 0;
+    accordionBody.style.display = 'block';
+    
+    setTimeout(() => {
+      accordionBody.style.transition = 'opacity 1s ease-in-out';
+      accordionBody.style.opacity = 1;
+    }, 10);
+
+    accordionBody.classList.add('visible');
+    accordionHeader.classList.add('active');
+
+    // Scroll if header not fully visible
+    if (!isHeaderVisible) {
+      setTimeout(() => {
+        accordionHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Optional: add a little manual offset afterwards
+        setTimeout(() => window.scrollBy(0, -20), 500); // tiny scroll up
+      }, 100);
+    }
+
+  } else {
+    // Fade out
+    accordionBody.style.transition = 'opacity 1s ease-in-out';
+    accordionBody.style.opacity = 0;
+
+    setTimeout(() => {
+      accordionBody.style.display = 'none';
+      accordionBody.classList.remove('visible');
+    }, 1000); // after fade-out
+
+    accordionHeader.classList.remove('active');
+
+    // Optional: when closing, scroll back up to header
+    if (!isHeaderVisible) {
+      setTimeout(() => {
+        accordionHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => window.scrollBy(0, -20), 500); // tiny scroll up
+      }, 100);
+    }
+  }
 });
 
 const whoareuButton = document.getElementById('whoareubutton');
