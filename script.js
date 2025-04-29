@@ -93,17 +93,17 @@ whoareuButton.addEventListener('click', function() {
     const progressInterval = setInterval(() => {
       progress += Math.floor(Math.random() * 8) + 2;
       if (progress > 100) progress = 100;
-
+    
       const filledLength = Math.floor((progress / 100) * barLength);
       const emptyLength = barLength - filledLength;
       const bar = `[${'='.repeat(filledLength > 0 ? filledLength - 1 : 0)}${filledLength > 0 ? '>' : ''}${' '.repeat(emptyLength)}] ${progress}%`;
-
+    
       const spinner = spinnerFrames[spinnerIndex % spinnerFrames.length];
       spinnerIndex++;
-
-      outputDiv.textContent = `Gathering ${spinner}\n${bar}`;
+    
+      outputDiv.textContent = `Gathering ${spinner} ${bar}`;
       outputDiv.scrollIntoView({ behavior: 'auto', block: 'end' });
-
+    
       const elapsed = Date.now() - startTime;
       if (elapsed >= duration || progress >= 100) {
         clearInterval(progressInterval);
@@ -112,7 +112,7 @@ whoareuButton.addEventListener('click', function() {
           typeText(fullInfo, outputDiv);
         }, 300);
       }
-    }, 150);
+    }, 250);
   } else {
     whoareuButton.textContent = 'Check';
     isOutputVisible = false;
@@ -122,7 +122,7 @@ whoareuButton.addEventListener('click', function() {
 
     setTimeout(() => {
       outputDiv.style.display = 'none';
-    }, 1000);  // Wait for the fade-out to finish before hiding the output
+    }, 1000);
   }
 });
 
