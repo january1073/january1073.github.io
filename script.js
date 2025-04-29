@@ -196,12 +196,11 @@ function typeText(text, element) {
     if (i < text.length) {
       element.textContent += text.charAt(i);
       i++;
+
+      // Scroll to the bottom of the element
+      element.scrollIntoView({ behavior: 'auto', block: 'end' });
+
       setTimeout(type, Math.random() * 30 + 10);
-    } else {
-      window.scrollTo({
-        top: element.offsetTop - 20,
-        behavior: "smooth"
-      });
     }
   }
 
