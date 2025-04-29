@@ -200,7 +200,7 @@ function typeText(text, element) {
       // Scroll to the bottom of the element
       element.scrollIntoView({ behavior: 'auto', block: 'end' });
 
-      setTimeout(type, Math.random() * 30 + 10);
+      setTimeout(type, Math.random() * 10 + 5);
     }
   }
 
