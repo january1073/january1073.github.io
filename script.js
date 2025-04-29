@@ -102,8 +102,6 @@ whoareuButton.addEventListener('click', function() {
       spinnerIndex++;
 
       outputDiv.textContent = `Gathering ${spinner}\n${bar}`;
-
-      // Scroll as progress updates
       outputDiv.scrollIntoView({ behavior: 'auto', block: 'end' });
 
       const elapsed = Date.now() - startTime;
@@ -116,9 +114,15 @@ whoareuButton.addEventListener('click', function() {
       }
     }, 150);
   } else {
-    outputDiv.style.display = 'none';
     whoareuButton.textContent = 'Check';
     isOutputVisible = false;
+
+    outputDiv.style.transition = 'opacity 1s ease-in-out';
+    outputDiv.style.opacity = 0;
+
+    setTimeout(() => {
+      outputDiv.style.display = 'none';
+    }, 1000);  // Wait for the fade-out to finish before hiding the output
   }
 });
 
@@ -205,10 +209,9 @@ function typeText(text, element) {
       element.textContent += text.charAt(i);
       i++;
 
-      // Auto-scroll while typing
       element.scrollIntoView({ behavior: 'auto', block: 'end' });
 
-      setTimeout(type, Math.random() * 10 + 5); // Faster typing
+      setTimeout(type, Math.random() * 10 + 5); 
     }
   }
 
