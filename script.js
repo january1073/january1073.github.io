@@ -87,6 +87,8 @@ whoareuButton.addEventListener('click', function() {
     const startTime = Date.now();
     const duration = 5000;
     const barLength = 25;
+    const spinnerFrames = ['|', '/', '-', '\\'];
+    let spinnerIndex = 0;
 
     const progressInterval = setInterval(() => {
       progress += Math.floor(Math.random() * 8) + 2;
@@ -96,7 +98,13 @@ whoareuButton.addEventListener('click', function() {
       const emptyLength = barLength - filledLength;
       const bar = `[${'='.repeat(filledLength > 0 ? filledLength - 1 : 0)}${filledLength > 0 ? '>' : ''}${' '.repeat(emptyLength)}] ${progress}%`;
 
-      outputDiv.textContent = `Gathering:\n${bar}`;
+      const spinner = spinnerFrames[spinnerIndex % spinnerFrames.length];
+      spinnerIndex++;
+
+      outputDiv.textContent = `Gathering ${spinner}\n${bar}`;
+
+      // Scroll as progress updates
+      outputDiv.scrollIntoView({ behavior: 'auto', block: 'end' });
 
       const elapsed = Date.now() - startTime;
       if (elapsed >= duration || progress >= 100) {
@@ -197,10 +205,10 @@ function typeText(text, element) {
       element.textContent += text.charAt(i);
       i++;
 
-      // Scroll to the bottom of the element
+      // Auto-scroll while typing
       element.scrollIntoView({ behavior: 'auto', block: 'end' });
 
-      setTimeout(type, Math.random() * 10 + 5);
+      setTimeout(type, Math.random() * 10 + 5); // Faster typing
     }
   }
 
