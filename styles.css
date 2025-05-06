@@ -34,7 +34,7 @@
 } */
 
 /* Pink team */
-/* [data-theme="dark"] {
+[data-theme="dark"] {
   --bg: #000000;
   --h1-color: #ff00ff;
   --text: #ff00ff;
@@ -43,10 +43,10 @@
   --selection-text: #000000;
   --terminal-accent: #ff00ff;
   --border-color: #ff00ff;
-} */
+}
 
 /* Green elite */
-[data-theme="dark"] {
+/* [data-theme="dark"] {
   --bg: #000000;
   --h1-color: #00ff00;
   --text: #00ff00;
@@ -55,7 +55,7 @@
   --selection-text: #000000;
   --terminal-accent: #00ff00;
   --border-color: #00ff00;
-}
+}*/
 
 body {
   background: var(--bg);
@@ -254,6 +254,10 @@ li {
   height: 2px;
   background: linear-gradient(to right, var(--border-color), transparent);
   margin: 20px 0;
+}
+
+.graffiti {
+  max-width: 800px;
 }
 
 .interface {
