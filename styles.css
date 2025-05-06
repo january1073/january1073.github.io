@@ -1,11 +1,11 @@
 :root {
   --bg: #f8f8f8;
-  --h1-color: #990000;
+  --h1-color: #800080;
   --text: #222222;
-  --link: #9a0000;
-  --selection-bg: #9a0000;
+  --link: #800080;
+  --selection-bg: #800080;
   --selection-text: #fff;
-  --terminal-accent: #800000;
+  --terminal-accent: #800080;
   --border-color: #d0d0d0;
 }
 
