@@ -1,10 +1,10 @@
 :root {
   --bg: #f8f8f8;
   --h1-color: #607D8B;
-  --text: #222222;
-  --link: #607D8B;
+  --text: #000000;
+  --link: #000000;
   --selection-bg: #607D8B;
-  --selection-text: #fff;
+  --selection-text: #00ff00;
   --terminal-accent: #607D8B;
   --border-color: #d0d0d0;
 }
@@ -106,7 +106,7 @@ a {
   text-decoration: none;
   border-bottom: 1px dashed;
   background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 1px;
-  transition: background-size 0.3s;
+  transition: background-size 0.5s;
 }
 
 a:hover {
