@@ -3,6 +3,7 @@
   --h1-color: #607D8B;
   --text: #000000;
   --link: #000000;
+  --link-hover:  #00ff00;
   --selection-bg: #607D8B;
   --selection-text: #00ff00;
   --terminal-accent: #607D8B;
@@ -51,6 +52,7 @@
   --h1-color: #00ff00;
   --text: #00ff00;
   --link: #00ff00;
+  --link-hover:  #00ff00;
   --selection-bg: #00ff00;
   --selection-text: #000000;
   --terminal-accent: #00ff00;
@@ -106,13 +108,12 @@ a {
   text-decoration: none;
   border-bottom: 1px dashed;
   background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 1px;
-  transition: background-size 0.5s;
+  transition: background-size 0.5s, border-color 0.5s, color 0.5s;
 }
 
 a:hover {
-  border-bottom: 1px solid;
-  background-size: 100% 1px;
-  background-position-x: left;
+  border-bottom: 1px solid var(--link-hover);
+  background: linear-gradient(0deg, var(--link-hover), var(--link-hover)) no-repeat left bottom / 100% 1px;
 }
 
 ::selection {
