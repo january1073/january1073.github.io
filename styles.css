@@ -1,9 +1,11 @@
 :root {
   --bg: #f8f8f8;
   --h1-color: #000000;
+  --code-box-border: #89CFF0;
+  --code-box-bg: #f3f3f3;
   --text: #1c1c1c;
   --link: #1c1c1c;
-  --link-hover:  #1c1c1c;
+  --link-hover:  #89CFF0;
   --selection-bg: #1c1c1c;
   --selection-text: #FFFFFF;
   --terminal-accent: #607D8B;
@@ -11,8 +13,10 @@
 }
 
 [data-theme="dark"] {
-  --bg: #1c1c1c;
+  --bg: #1B1811;
   --h1-color: #89CFF0;
+  --code-box-border: #180100;
+  --code-box-bg: #161616;
   --text: #5F9EA0;
   --link: #5F9EA0;
   --link-hover: #5F9EA0;
@@ -91,6 +95,15 @@ body:not([data-theme="dark"]) {
 
 .text-box {
   flex: 1;
+}
+
+.code-box {
+  background-color: var(--code-box-bg);
+  /* border: 0.5px solid var(--code-box-border); */
+  font-size: 0.6rem;
+  padding: 10px;
+  font-family: monospace;
+  display: inline-block;
 }
 
 h1 {
