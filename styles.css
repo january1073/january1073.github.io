@@ -1,9 +1,9 @@
 :root {
   --bg: #f8f8f8;
-  --h1-color: #DC143C;
+  --h1-color: #000000;
   --text: #000000;
   --link: #000000;
-  --link-hover:  #DC143C;
+  --link-hover:  #000000;
   --selection-bg: #000000;
   --selection-text: #FFFFFF;
   --terminal-accent: #607D8B;
@@ -15,7 +15,7 @@
   --h1-color: #00ff00;
   --text: #00ff00;
   --link: #00ff00;
-  --link-hover:  #00ff00;
+  --link-hover: #00ff00;
   --selection-bg: #00ff00;
   --selection-text: #000000;
   --terminal-accent: #00ff00;
