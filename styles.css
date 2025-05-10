@@ -66,6 +66,31 @@ body:not([data-theme="dark"]) {
   font-size: 0.7rem;
 }
 
+.whoami {
+  display: flex;
+  align-items: center;      /* Vertically center if needed */
+  gap: 16px;                /* Space between image and text */
+}
+
+.image-box {
+  flex-shrink: 0;           /* Prevent shrinking */
+  width: 180px;
+  height: 180px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;        /* Crop to fill square */
+}
+
+.text-box {
+  flex: 1;                  /* Take remaining space */
+}
+
 a {
   color: var(--link);
   text-decoration: none;
@@ -80,6 +105,11 @@ a:hover {
 }
 
 ::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+mark {
   background: var(--selection-bg);
   color: var(--selection-text);
 }
