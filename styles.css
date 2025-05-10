@@ -1,11 +1,11 @@
 :root {
   --bg: #f8f8f8;
-  --h1-color: #607D8B;
+  --h1-color: #DC143C;
   --text: #000000;
   --link: #000000;
-  --link-hover:  #00ff00;
-  --selection-bg: #607D8B;
-  --selection-text: #00ff00;
+  --link-hover:  #000000;
+  --selection-bg: #000000;
+  --selection-text: #FFFFFF;
   --terminal-accent: #607D8B;
   --border-color: #d0d0d0;
 }
@@ -62,7 +62,7 @@ body:not([data-theme="dark"]) {
 
 .timestamp {
   font-family: monospace;
-  color: #666;
+  color: #808080;
   font-size: 0.7rem;
 }
 
@@ -89,6 +89,10 @@ body:not([data-theme="dark"]) {
 
 .text-box {
   flex: 1;                  /* Take remaining space */
+}
+
+h1 {
+  color: var(--h1-color);
 }
 
 a {
