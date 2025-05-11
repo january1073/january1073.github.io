@@ -19,7 +19,7 @@
   --code-box-bg: #161616;
   --text: #5F9EA0;
   --link: #5F9EA0;
-  --link-hover: #5F9EA0;
+  --link-hover: #404040;
   --selection-bg: #5F9EA0;
   --selection-text: #000000;
   --terminal-accent: #5F9EA0;
@@ -101,9 +101,15 @@ body:not([data-theme="dark"]) {
   background-color: var(--code-box-bg);
   border: 0.5px solid var(--code-box-border);
   font-size: 0.6rem;
-  padding: 10px;
+  padding: 5px;
+  margin: 5px;
   font-family: monospace;
   display: inline-block;
+}
+
+.small-text {
+  color: #808080;
+  font-size: 0.7rem;
 }
 
 h1 {
