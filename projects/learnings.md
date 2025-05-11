@@ -1,5 +1,21 @@
 ## Key takeaways from my projects
 
+### How I Flooded Myself — hping3 Against Apache
+
+#### Skills Demonstrated
+* Lab environment setup with VirtualBox, Docker, and multiple OS distributions
+* Network traffic capture and analysis with TShark/Wireshark
+* Implementation of three DoS attack vectors (SYN, ICMP, UDP floods)
+* Network performance measurement and benchmarking
+* Secure testing methodology in controlled environments
+
+#### Lesson Learned
+* Network infrastructure often fails before well-configured servers
+* Modern web servers have built-in resilience against basic DoS attacks
+* IP spoofing significantly amplifies attack effectiveness
+* Connectionless protocols (UDP) can cause more damage than TCP attacks
+* Security testing requires proper traffic and resource monitoring
+
 ### From Panic to Action — How to Recover from a GCP Data Breach
 
 #### Skills Demonstrated
