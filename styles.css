@@ -274,9 +274,3 @@ li {
   background: linear-gradient(to right, var(--border-color), transparent);
   margin: 20px 0;
 }
-
-.graffiti {
-  max-width: 100%;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
-}
