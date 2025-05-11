@@ -99,7 +99,7 @@ body:not([data-theme="dark"]) {
 
 .code-box {
   background-color: var(--code-box-bg);
-  /* border: 0.5px solid var(--code-box-border); */
+  border: 0.5px solid var(--code-box-border);
   font-size: 0.6rem;
   padding: 10px;
   font-family: monospace;
