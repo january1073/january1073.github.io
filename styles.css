@@ -101,7 +101,7 @@ body:not([data-theme="dark"]) {
   background-color: var(--code-box-bg);
   border: 0.5px solid var(--code-box-border);
   font-size: 0.6rem;
-  padding: 5px;
+  padding: 10px;
   margin: 5px;
   font-family: monospace;
   display: inline-block;
@@ -262,10 +262,23 @@ li {
   transform: rotate(90deg);
 }
 
-.tree {
-  font-family: 'Courier New', monospace;
-  line-height: 1.3;
-  font-size: clamp(0.3rem, 2vw, 1.0rem);
+.accordion-body.tree pre {
+  font-family: monospace;
+  font-size: 0.8rem;
+  background-color: var(--code-box-bg, #f9f9f9);
+  border: 1px solid var(--code-box-border, #ccc);
+  padding: 1em;
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.accordion-body.tree pre::-webkit-scrollbar {
+  height: 8px;
+}
+.accordion-body.tree pre::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
 }
 
 .fading-line {
