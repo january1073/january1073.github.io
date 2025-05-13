@@ -24,10 +24,10 @@ function toggleVideoBackground(theme) {
 
 	if (theme === "dark") {
 		bgVideoContainer.style.display = "block";
-    bgVideo.style.transition = "opacity 30s"; // 30s fade-in
+    bgVideo.style.transition = "opacity 30s";
 		bgVideo.style.opacity = "0";
 		setTimeout(() => {
-      bgVideo.style.opacity = "0.1"; // Changed from 1 to 0.4 to match CSS
+      bgVideo.style.opacity = "0.1";
 		}, 50);
 	} else {
 		bgVideo.style.opacity = "0";

@@ -52,16 +52,15 @@ body:not([data-theme="dark"]) {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  z-index: -1; /* Already correctly set to be behind content */
+  z-index: -1;
   display: none;
 }
 
-/* Fix for theme-toggle to ensure it stays fixed at top right on all screen sizes */
 .theme-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 100; /* Ensure it's above everything else */
+  z-index: 100;
   cursor: pointer;
   font-size: 1.8rem;
   padding: 10px;
@@ -69,15 +68,22 @@ body:not([data-theme="dark"]) {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Add specific mobile handling for the video */
+.theme-toggle:hover {
+  transform: scale(1.2) rotate(3deg);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
 @media (max-width: 768px) {
   .video-background {
     position: fixed;
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    z-index: -999; /* Ensure it's really behind on mobile */
-    pointer-events: none; /* Make sure it doesn't capture touch events */
+    z-index: -999;
+    pointer-events: none;
   }
 
   .background-video {
@@ -92,15 +98,19 @@ body:not([data-theme="dark"]) {
     object-fit: cover;
   }
 
-  /* Improve the overlay opacity on mobile to ensure better text readability */
   .video-overlay {
-    background: rgba(0, 0, 0, 0.5); /* Darker overlay for mobile */
+    background: rgba(0, 0, 0, 0.5);
   }
 
-  /* Ensure the content container has a higher z-index than the video */
   body > *:not(.video-background):not(.video-overlay) {
     position: relative;
     z-index: 1;
+  }
+
+  .theme-toggle {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
   }
 }
 
@@ -209,25 +219,6 @@ ul {
 
 li {
   margin-bottom: 0.5rem;
-}
-
-.theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  font-size: 1.8rem;
-  padding: 10px;
-  display: inline-block;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.theme-toggle:hover {
-  transform: scale(1.2) rotate(3deg);
-}
-
-.theme-toggle:active {
-  transform: scale(0.95);
 }
 
 .footer {
