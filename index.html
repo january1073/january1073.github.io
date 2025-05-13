@@ -1,57 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="flag" content="RkxBR3tXM0JfSEBDS0lOR18xMDF9">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta name="apple-mobile-web-app-title" content="january1073">
-    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
-    <link rel="shortcut icon" href="/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="manifest" href="/icons/site.webmanifest">
-    <link rel="me" href="https://infosec.exchange/@january1073">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="security" href="/well-known/security.txt" type="text/plain">
-    <title>january1073 || portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="flag" content="RkxBR3tXM0JfSEBDS0lOR18xMDF9">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="apple-mobile-web-app-title" content="january1073">
+  <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+  <link rel="shortcut icon" href="/icons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/icons/site.webmanifest">
+  <link rel="me" href="https://infosec.exchange/@january1073">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="security" href="/well-known/security.txt" type="text/plain">
+  <title>january1073 || portfolio</title>
 </head>
 <body>
-    <div class="ascii-container">
-        <pre class="ascii-art">
+  <div class="video-background">
+    <video autoplay muted loop id="bgVideo" class="background-video">
+      <source src="vid/bg-vid1.mp4" type="video/mp4">
+    </video>
+  <div class="video-overlay"></div>
+</div>
+
+  <div class="ascii-container">
+    <pre class="ascii-art">
   ▘
   ▌▀▌▛▌▌▌▀▌▛▘▌▌
   ▌█▌▌▌▙▌█▌▌ ▙▌
  ▙▌          ▄▌
    <strong>1 0 7 3 </strong>
-        </pre>
+    </pre>
+  </div>
+
+  <p class="timestamp">Last update: <span id="last-updated"></span></p>
+
+  <h1>> whoami</h1>
+  <div class="whoami">
+    <div class="image-box">
+      <img src="/img/january1073.jpg" alt="portait">
     </div>
-    <p class="timestamp">Last update: <span id="last-updated"></span></p>
-    <h1>> whoami</h1>
-    <div class="whoami">
-      <div class="image-box">
-        <img src="/img/january1073.jpg" alt="portait">
-      </div>
-      <div class"text-box">
-        <p><code class="code-box"><strong>Lawyer</strong></code> <code class="code-box"><strong>Information Security</strong></code> <code class="code-box"><strong>Google Cloud, IBM, & ISC2 Certified</strong></code> <code class="code-box"><strong>THM Player</strong></code></p>
-      </div>
+    <div class"text-box">
+      <p><code class="code-box"><strong>Lawyer</strong></code> <code class="code-box"><strong>Information Security</strong></code> <code class="code-box"><strong>Google Cloud, IBM, & ISC2 Certified</strong></code> <code class="code-box"><strong>THM Player</strong></code></p>
     </div>
-    <h1>> cat readme.txt</h1>
-    <p>Welcome. I’m a lawyer turned infosec practitioner with a passion for clarity, structure, and threat surface reduction.</p>
-    <ul>
-      <li>My <strong>projects</strong> are lived labs — each one a hands-on exploration of real-world systems and security concepts.</li>
-      <li>The <strong>100s Series</strong> (<i>just launched</i>) serves as a set of tactical primers, breaking down essential tools and techniques for peers in the field.</li>
-      <li>My <strong>publications</strong> explore the intersection where law meets code, focusing on how regulation adapts to an evolving digital threat landscape.</li>
-    </ul>
-    <p class="small-text">tail -f learning.log</p>
-    <h1>> ls /projects</h1>
-    <p><a href="/projects/learnings.md">>> Key takeaways from my projects</a></p>
-    <ul>
-        <li><a href="https://infosecwriteups.com/how-i-flooded-myself-hping3-against-apache-c518cbab639f" target="_blank">How I Flooded Myself — hping3 Against Apache</a></li>
-        <li><a href="https://january1073.medium.com/respond-and-recover-from-a-data-breach-in-google-cloud-capstone-project-of-the-google-cloud-634e1976fc88" target="_blank">From Panic to Action — How to Recover from a GCP Data Breach</a></li>
-        <li><a href="https://january1073.medium.com/unmasking-metasploitable2-988d2ed3fe67" target="_blank">Finding Flaws 101 — Scanning Metasploitable2 with Nessus Pro</a></li>
-    </ul>
+  </div>
 
     <h1>> ls /100s_series</h1>
     <ul>
@@ -66,16 +60,27 @@
         <li><a href="https://www.springerprofessional.de/das-chinesische-sozialkreditsystem-fuer-unternehmen-hintergruend/18635734" target="_blank">Das chinesische Sozialkreditsystem für Unternehmen – Hintergründe und praktische Hinweise</a></li>
     </ul>
 
-    <div class="fading-line"></div>
+  <h1>> ls /100s_series</h1>
+  <ul>
+    <li><a href="https://osintteam.blog/tcpdump-101-silently-capturing-your-targets-network-traffic-76b839e64232" target="_blank">tcpdump 101 — Silently Capturing Your Target’s Network Traffic</a></li>
+  </ul>
 
-    <div class="accordion-container">
-        <div class="accordion-header" id="accordionHeader">
-            <div class="accordion-arrow"><h1>[⚹]</h1></div>
-            <div class="arrow-space"> </div>
-            <div></div><h1>tree /bio</h1></div>
-        </div>
-        <div id="accordionBody" class="accordion-body tree">
-            <pre>
+  <h1>> ls /publications</h1>
+  <ul>
+    <li><a href="https://infosecwriteups.com/dora-has-entered-the-chat-eus-new-cyber-rulebook-reshaping-financial-security-e2ce7dd95c5d" target="_blank">DORA Has Entered the Chat: EU’s New Cyber Rulebook Reshaping Financial Security</a></li>
+    <li><a href="https://www.springerprofessional.de/das-chinesische-sozialkreditsystem-fuer-unternehmen-hintergruend/18635734" target="_blank">Das chinesische Sozialkreditsystem für Unternehmen – Hintergründe und praktische Hinweise</a></li>
+  </ul>
+
+  <div class="fading-line"></div>
+
+  <div class="accordion-container">
+    <div class="accordion-header" id="accordionHeader">
+      <div class="accordion-arrow"><h1>[⚹]</h1></div>
+      <div class="arrow-space"> </div>
+      <div></div><h1>tree /bio</h1></div>
+    </div>
+  <div id="accordionBody" class="accordion-body tree">
+          <pre>
 bio
 ├── experience
 │   ├── Since 2015 Practicing lawyer
@@ -100,21 +105,21 @@ bio
     ├── UCCS, Applied Cryptography
     └── UCCS, Homeland Security and Cybersecurity
             </pre>
-    </div>
+  </div>
 
-    <div class="fading-line"></div>
+  <div class="fading-line"></div>
 
-    <h1>> cat contact.txt</h1>
-    <p>>> <a href="mailto:january1073@proton.me">january1073@proton.me</a></p>
-    <p class="small-text">PGP key: <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/56F2FDCC2EF4D52A3F597815AE34888E8EDC586C">0xDEADBEEF</a> (Fingerprint: 56F2 FDCC 2EF4 D52A 3F59 7815 AE34 888E 8EDC 586C)</p>
-    <p>>> Or another channel of your choice: <a href="https://linktr.ee/january1073" target="_blank">Linktree</a></p>
+  <h1>> cat contact.txt</h1>
+  <p>>> <a href="mailto:january1073@proton.me">january1073@proton.me</a></p>
+  <p class="small-text">PGP key: <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/56F2FDCC2EF4D52A3F597815AE34888E8EDC586C">0xDEADBEEF</a> (Fingerprint: 56F2 FDCC 2EF4 D52A 3F59 7815 AE34 888E 8EDC 586C)</p>
+  <p>>> Or another channel of your choice: <a href="https://linktr.ee/january1073" target="_blank">Linktree</a></p>
 
-    <footer class="footer">
-        <p><span class="signature"># built from scratch</span> | <a href="/well-known/security.txt">Responsible Disclosure Policy</a></p>
-    </footer>
+  <footer class="footer">
+    <p><span class="signature"># built from scratch</span> | <a href="/well-known/security.txt">Responsible Disclosure Policy</a></p>
+  </footer>
 
-    <div class="theme-toggle">[◐]</div>
+  <div class="theme-toggle">[◐]</div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
