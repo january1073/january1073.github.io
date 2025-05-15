@@ -1,49 +1,42 @@
-// Fetch the latest GitHub commit date
-fetch('https://api.github.com/repos/january1073/january1073.github.io/commits/main')
-	.then(r => r.json())
-	.then(data => {
-		const lastCommit = new Date(data.commit.committer.date);
-		document.getElementById('last-updated').textContent = lastCommit.toISOString().split('T')[0];
-	});
-
 // Toggle Theme Function
 function toggleTheme() {
 	const currentTheme = document.body.dataset.theme;
 	const newTheme = currentTheme === "dark" ? "" : "dark";
 	document.body.dataset.theme = newTheme;
 	localStorage.setItem("theme", newTheme);
-	toggleVideoBackground(newTheme);
+	updateVideoBackground(newTheme);
 }
 
-// Toggle Video Background with Smooth Fade-In
-function toggleVideoBackground(theme) {
+function updateVideoBackground(theme) {
 	const bgVideoContainer = document.querySelector(".video-background");
 	const bgVideo = document.getElementById("bgVideo");
 
 	if (!bgVideoContainer || !bgVideo) return;
 
-	if (theme === "dark") {
-		bgVideoContainer.style.display = "block";
-    bgVideo.style.transition = "opacity 30s";
-		bgVideo.style.opacity = "0";
-		setTimeout(() => {
-      bgVideo.style.opacity = "0.1";
-		}, 50);
-	} else {
-		bgVideo.style.opacity = "0";
-		bgVideoContainer.style.display = "none";
-	}
+	bgVideoContainer.style.display = "block";
+
+	// Adjust opacity based on theme
+	bgVideo.style.transition = "opacity 30s";
+	bgVideo.style.opacity = "0";
+
+	setTimeout(() => {
+		// Lower opacity in light mode, higher in dark mode
+		bgVideo.style.opacity = theme === "dark" ? "0.1" : "0.05";
+	}, 50);
 }
 
-// Initialize Theme and Video Background
 document.addEventListener("DOMContentLoaded", () => {
 	const savedTheme = localStorage.getItem("theme");
 	document.body.dataset.theme = savedTheme ? savedTheme : "";
-	toggleVideoBackground(savedTheme || "");
 
-	// Set video playback speed
+	const bgVideoContainer = document.querySelector(".video-background");
 	const bgVideo = document.getElementById("bgVideo");
-	if (bgVideo) {
+
+	if (bgVideoContainer && bgVideo) {
+		bgVideoContainer.style.display = "block";
+		bgVideo.style.opacity = savedTheme === "dark" ? "0.1" : "0.05";
+
+		// Set video playback speed
 		bgVideo.playbackRate = 0.75;
 	}
 });
@@ -99,3 +92,11 @@ accordionHeader.addEventListener('click', () => {
 		}
 	}
 });
+
+// Fetch the latest GitHub commit date
+fetch('https://api.github.com/repos/january1073/january1073.github.io/commits/main')
+	.then(r => r.json())
+	.then(data => {
+		const lastCommit = new Date(data.commit.committer.date);
+		document.getElementById('last-updated').textContent = lastCommit.toISOString().split('T')[0];
+	});
