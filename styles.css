@@ -2,7 +2,7 @@
   --bg: #f8f8f8;
   --h1-color: #000000;
   --code-box-border: #89CFF0;
-  --code-box-bg: #f3f3f3;
+  --code-box-bg: rgba(243, 243, 243, 0.8);
   --text: #1c1c1c;
   --link: #1c1c1c;
   --link-hover:  #89CFF0;
@@ -16,7 +16,7 @@
   --bg: #1B1811;
   --h1-color: #89CFF0;
   --code-box-border: #180100;
-  --code-box-bg: #161616;
+  --code-box-bg: rgba(22, 22, 22, 0.8);
   --text: #5F9EA0;
   --link: #5F9EA0;
   --link-hover: #404040;
