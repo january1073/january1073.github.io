@@ -183,7 +183,6 @@ body:not([data-theme="dark"]) {
 
 .new-post {
   color: var(--link-hover);
-  font-weight: bold;
 }
 
 h1 {
