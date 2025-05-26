@@ -181,6 +181,11 @@ body:not([data-theme="dark"]) {
   font-size: 0.7rem;
 }
 
+.new-post {
+  color: var(--link-hover);
+  font-weight: bold;
+}
+
 h1 {
   color: var(--h1-color);
 }
