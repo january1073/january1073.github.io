@@ -1,11 +1,14 @@
+/* ========================== */
+/*        ROOT VARIABLES      */
+/* ========================== */
 :root {
   --bg: #f8f8f8;
   --h1-color: #000000;
   --code-box-border: #89CFF0;
-  --code-box-bg: rgba(243, 243, 243, 0.7);
+  --code-box-bg: rgba(243, 243, 243, 0.5);
   --text: #1c1c1c;
   --link: #1c1c1c;
-  --link-hover:  #89CFF0;
+  --link-hover: #89CFF0;
   --selection-bg: #1c1c1c;
   --selection-text: #FFFFFF;
   --terminal-accent: #607D8B;
@@ -16,7 +19,7 @@
   --bg: #1B1811;
   --h1-color: #89CFF0;
   --code-box-border: #180100;
-  --code-box-bg: rgba(22, 22, 22, 0.7);
+  --code-box-bg: rgba(22, 22, 22, 0.6);
   --text: #5F9EA0;
   --link: #5F9EA0;
   --link-hover: #D3D3D3;
@@ -26,6 +29,9 @@
   --border-color: #5F9EA0;
 }
 
+/* ========================== */
+/*        TAG SELECTORS       */
+/* ========================== */
 body {
   background: var(--bg);
   color: var(--text);
@@ -41,10 +47,53 @@ body {
 body:not([data-theme="dark"]) {
   background:
     linear-gradient(rgba(248, 248, 248, 0.9), rgba(248, 248, 248, 0.9)),
-    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 10a5 5 0 0 1 5 5v30a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5V15a5 5 0 0 1 5-5h20zm0 2H10a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3V15a3 3 0 0 0-3-3z' fill='%239a0000' fill-opacity='0.08'/%3E%3Cpath d='M50 10a5 5 0 0 1 5 5v30a5 5 0 0 1-5 5H30a5 5 0 0 1-5-5V15a5 5 0 0 1 5-5h20zm0 2H30a3 3 0 0 0-3 3v30a3 3 0 0 0 3 3h20a3 3 0 0 0 3-3V15a3 3 0 0 0-3-3z' fill='%239a0000' fill-opacity='0.08'/%3E%3Cpath d='M10 30h40M30 10v40' stroke='%23800000' stroke-opacity='0.12' stroke-width='0.5'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg width='60' height='60' ... %3C/svg%3E");
   background-size: 60px 60px;
 }
 
+h1 {
+  color: var(--h1-color);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 1px;
+  transition: background-size 0.5s, border-color 0.5s, color 0.5s;
+}
+
+a:hover {
+  border-bottom: 1px solid var(--link-hover);
+  background: linear-gradient(0deg, var(--link-hover), var(--link-hover)) no-repeat left bottom / 100% 1px;
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+mark {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+pre {
+  margin: 0;
+}
+
+ul {
+  list-style-type: "> ";
+  padding-left: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* ========================== */
+/*       CLASS SELECTORS      */
+/* ========================== */
 .video-background {
   position: fixed;
   top: 0;
@@ -54,6 +103,22 @@ body:not([data-theme="dark"]) {
   overflow: hidden;
   z-index: -1;
   display: none;
+}
+
+.background-video {
+  position: fixed;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.video-overlay {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .theme-toggle {
@@ -74,44 +139,6 @@ body:not([data-theme="dark"]) {
 
 .theme-toggle:active {
   transform: scale(0.95);
-}
-
-@media (max-width: 768px) {
-  .video-background {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    z-index: -999;
-    pointer-events: none;
-  }
-
-  .background-video {
-    position: fixed;
-    width: auto;
-    height: auto;
-    min-width: 100%;
-    min-height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-  }
-
-  .video-overlay {
-    background: rgba(0, 0, 0, 0.5);
-  }
-
-  body > *:not(.video-background):not(.video-overlay) {
-    position: relative;
-    z-index: 1;
-  }
-
-  .theme-toggle {
-    position: fixed !important;
-    top: 20px !important;
-    right: 20px !important;
-  }
 }
 
 .ascii-container {
@@ -185,46 +212,6 @@ body:not([data-theme="dark"]) {
   color: var(--link-hover);
 }
 
-h1 {
-  color: var(--h1-color);
-}
-
-a {
-  color: var(--link);
-  text-decoration: none;
-  border-bottom: 1px dashed;
-  background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 1px;
-  transition: background-size 0.5s, border-color 0.5s, color 0.5s;
-}
-
-a:hover {
-  border-bottom: 1px solid var(--link-hover);
-  background: linear-gradient(0deg, var(--link-hover), var(--link-hover)) no-repeat left bottom / 100% 1px;
-}
-
-::selection {
-  background: var(--selection-bg);
-  color: var(--selection-text);
-}
-
-mark {
-  background: var(--selection-bg);
-  color: var(--selection-text);
-}
-
-pre {
-  margin: 0;
-}
-
-ul {
-  list-style-type: "> ";
-  padding-left: 1rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
 .footer {
   bottom: 0;
   width: 100%;
@@ -232,6 +219,111 @@ li {
   color: #666;
   font-size: 0.7rem;
   z-index: 100;
+}
+
+.signature::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+  color: var(--cursor);
+  text-shadow: 0 0 8px var(--cursor), 0 0 12px var(--cursor);
+}
+
+.accordion-header {
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+}
+
+.accordion-arrow {
+  transition: transform 0.3s ease;
+}
+
+.accordion-header:hover .accordion-arrow {
+  transform: scale(1.2);
+}
+
+.accordion-header.active .accordion-arrow {
+  transform: rotate(90deg);
+}
+
+.accordion-body {
+  display: none;
+  color: var(--text);
+  margin: 0;
+  padding-top: 0.2em;
+  padding-left: 1.5em;
+}
+
+.accordion-body.visible {
+  display: block;
+}
+
+.accordion-body.tree pre {
+  font-family: monospace;
+  font-size: 0.8rem;
+  background-color: var(--code-box-bg, #f9f9f9);
+  border: 1px solid var(--code-box-border, #ccc);
+  padding: 1em;
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.accordion-body.tree pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.accordion-body.tree pre::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+.arrow-space {
+  width: 0.5em;
+}
+
+/* ========================== */
+/*     MEDIA QUERIES & PRINT  */
+/* ========================== */
+@media (max-width: 768px) {
+  .video-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: -999;
+    pointer-events: none;
+  }
+
+  .theme-toggle {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+  }
+
+  .background-video {
+    position: fixed;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  .video-overlay {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  body > *:not(.video-background):not(.video-overlay) {
+    position: relative;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 600px) {
@@ -267,77 +359,10 @@ li {
   }
 }
 
+/* ========================== */
+/*         ANIMATIONS         */
+/* ========================== */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
-}
-
-.signature::after {
-  content: "_";
-  animation: blink 1s step-end infinite;
-  color: var(--cursor);
-  text-shadow: 0 0 8px var(--cursor), 0 0 12px var(--cursor);
-}
-
-.accordion-header {
-  background: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--text);
-}
-
-.accordion-arrow {
-  transition: transform 0.3s ease;
-}
-
-.accordion-header:hover .accordion-arrow {
-  transform: scale(1.2);
-}
-
-.arrow-space {
-  width: 0.5em;
-}
-
-.accordion-body {
-  display: none;
-  color: var(--text);
-  margin: 0;
-  padding-top: 0.2em;
-  padding-left: 1.5em;
-}
-
-.accordion-body.visible {
-  display: block;
-}
-
-.accordion-header.active .accordion-arrow {
-  transform: rotate(90deg);
-}
-
-.accordion-body.tree pre {
-  font-family: monospace;
-  font-size: 0.8rem;
-  background-color: var(--code-box-bg, #f9f9f9);
-  border: 1px solid var(--code-box-border, #ccc);
-  padding: 1em;
-  margin: 0;
-  white-space: pre;
-  overflow-x: auto;
-}
-
-.accordion-body.tree pre::-webkit-scrollbar {
-  height: 8px;
-}
-.accordion-body.tree pre::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 4px;
-}
-
-.fading-line {
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, var(--border-color), transparent);
-  margin: 20px 0;
 }
