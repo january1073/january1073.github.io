@@ -219,6 +219,7 @@ li {
   color: #666;
   font-size: 0.7rem;
   z-index: 100;
+  text-align: center;
 }
 
 .signature::after {
