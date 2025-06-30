@@ -4,11 +4,11 @@
 :root {
   --bg: #f8f8f8;
   --h1-color: #000000;
-  --code-box-border: #89CFF0;
+  --code-box-border: #21a5e3;
   --code-box-bg: rgba(243, 243, 243, 0.5);
   --text: #1c1c1c;
   --link: #1c1c1c;
-  --link-hover: #89CFF0;
+  --link-hover: #21a5e3;
   --selection-bg: #1c1c1c;
   --selection-text: #FFFFFF;
   --terminal-accent: #607D8B;
@@ -17,7 +17,7 @@
 
 [data-theme="dark"] {
   --bg: #1B1811;
-  --h1-color: #89CFF0;
+  --h1-color: #105b7e;
   --code-box-border: #180100;
   --code-box-bg: rgba(22, 22, 22, 0.6);
   --text: #5F9EA0;
@@ -53,6 +53,11 @@ body:not([data-theme="dark"]) {
 
 h1 {
   color: var(--h1-color);
+}
+
+em {
+  font-style: normal;
+  color: var(--link-hover);
 }
 
 a {
@@ -366,4 +371,49 @@ li {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+@keyframes glitchPixelJitter {
+  0% {
+    opacity: 1;
+    filter: none;
+    transform: translate(0, 0);
+    image-rendering: auto;
+  }
+  10% {
+    image-rendering: pixelated;
+    filter: drop-shadow(3px 0 red) drop-shadow(-3px 0 blue);
+    transform: translate(-5px, 0) scale(1.02);
+  }
+  25% {
+    image-rendering: pixelated;
+    filter: drop-shadow(2px 0 lime) drop-shadow(-2px 0 magenta);
+    transform: translate(5px, 3px) scale(1.03);
+  }
+  40% {
+    image-rendering: pixelated;
+    filter: drop-shadow(1px 0 cyan) drop-shadow(-1px 0 yellow);
+    transform: translate(-4px, -3px) scale(1.01);
+  }
+  60% {
+    image-rendering: auto;
+    opacity: 0.7;
+    transform: translate(3px, 0);
+  }
+  80% {
+    image-rendering: auto;
+    opacity: 0.4;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translate(0, 0) scale(1.1);
+  }
+}
+
+.glitch-pixel-jitter {
+  animation: glitchPixelJitter 1s ease forwards;
+  position: relative;
+  overflow: hidden;
 }

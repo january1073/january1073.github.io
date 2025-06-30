@@ -82,15 +82,14 @@ accordionHeader.addEventListener('click', () => {
 			}, 100);
 		}
 	} else {
-		accordionBody.style.transition = 'opacity 1s ease-in-out';
-		accordionBody.style.opacity = 0;
+		accordionBody.classList.add('glitch-pixel-jitter');
 
 		setTimeout(() => {
-			accordionBody.style.display = 'none';
-			accordionBody.classList.remove('visible');
-		}, 1000);
-
-		accordionHeader.classList.remove('active');
+		  accordionBody.style.display = 'none';
+		  accordionBody.classList.remove('visible');
+		  accordionBody.classList.remove('glitch-pixel-jitter');
+		  accordionHeader.classList.remove('active');
+		}, 900);
 
 		if (!isHeaderVisible) {
 			setTimeout(() => {
