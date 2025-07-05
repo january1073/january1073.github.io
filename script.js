@@ -13,11 +13,8 @@ function updateVideoBackground(theme) {
 	if (!bgVideoContainer || !bgVideo) return;
 
 	bgVideoContainer.style.display = "block";
-
 	bgVideo.style.opacity = "0";
-
 	void bgVideo.offsetWidth;
-
 	bgVideo.style.transition = "opacity 30s linear";
 
 	setTimeout(() => {
@@ -37,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		bgVideoContainer.style.display = "block";
 		bgVideo.style.visibility = "visible";
 		bgVideo.style.opacity = "0";
-
 		bgVideo.playbackRate = 0.75;
 
 		window.addEventListener('load', () => {
@@ -64,13 +60,15 @@ accordionHeader.addEventListener('click', () => {
 	);
 
 	if (!accordionBody.classList.contains('visible')) {
-		accordionBody.style.opacity = 0;
 		accordionBody.style.display = 'block';
+		accordionBody.style.opacity = '0';
+		accordionBody.style.transform = 'translateY(-5px)';
 
-		setTimeout(() => {
-			accordionBody.style.transition = 'opacity 1s ease-in-out';
-			accordionBody.style.opacity = 1;
-		}, 10);
+		void accordionBody.offsetHeight;
+
+		accordionBody.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
+		accordionBody.style.opacity = '1';
+		accordionBody.style.transform = 'translateY(0)';
 
 		accordionBody.classList.add('visible');
 		accordionHeader.classList.add('active');
@@ -82,14 +80,17 @@ accordionHeader.addEventListener('click', () => {
 			}, 100);
 		}
 	} else {
-		accordionBody.classList.add('glitch-pixel-jitter');
+		accordionBody.classList.add('fade-out');
 
 		setTimeout(() => {
-		  accordionBody.style.display = 'none';
-		  accordionBody.classList.remove('visible');
-		  accordionBody.classList.remove('glitch-pixel-jitter');
-		  accordionHeader.classList.remove('active');
-		}, 900);
+			accordionBody.style.display = 'none';
+			accordionBody.classList.remove('visible');
+			accordionBody.classList.remove('fade-out');
+			accordionHeader.classList.remove('active');
+
+			accordionBody.style.opacity = '0';
+			accordionBody.style.transform = 'translateY(-5px)';
+		}, 400);
 
 		if (!isHeaderVisible) {
 			setTimeout(() => {
