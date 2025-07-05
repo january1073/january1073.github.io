@@ -1,6 +1,6 @@
 ## Key takeaways from my projects
 
-### darkmailr — Offline AI-Powered Phishing Simulation Tool
+### darkmailr — Generate realistic, context-aware phishing emails – air-gapped
 
 #### Skills Demonstrated
 
