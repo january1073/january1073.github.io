@@ -1,5 +1,22 @@
 ## Key takeaways from my projects
 
+### darkmailr — Offline AI-Powered Phishing Simulation Tool
+
+#### Skills Demonstrated
+
+* Local LLM deployment and configuration using Ollama on Ubuntu server
+* Full-stack web application development with Flask framework and HTML templating
+* API integration between Flask application and Ollama's OpenAI-compatible endpoints
+* Server hardening and network configuration including firewall rules (UFW)
+* Cross-platform development workflow between headless Ubuntu server and client systems
+
+#### Lesson Learned
+
+* Open-source LLMs can effectively generate realistic phishing content for security training without relying on cloud services
+* Self-hosted solutions provide better control and privacy for sensitive security testing scenarios
+* Proper network isolation is crucial when developing tools that could be misused if exposed to the internet
+* Local API architectures enable powerful AI capabilities while maintaining air-gapped security environments
+
 ### How I Flooded Myself — hping3 Against Apache
 
 #### Skills Demonstrated
@@ -37,9 +54,9 @@
 * Setting up virtual environments for vulnerability assessment
 * Deploying Nessus Professional via Docker
 * Conducting vulnerability scans on Metasploitable2
-* Configuring network settings for realistic testing​ 
+* Configuring network settings for realistic testing​
 
 #### Lesson Learned
 * Overcoming installation and configuration challenges
 * Understanding the importance of network configurations in vulnerability assessments
-* Gaining insights into common vulnerabilities in intentionally insecure systems 
+* Gaining insights into common vulnerabilities in intentionally insecure systems
