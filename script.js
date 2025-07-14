@@ -19,7 +19,6 @@ function updateVideoBackground(theme) {
 
 	setTimeout(() => {
 		bgVideo.style.opacity = theme === "dark" ? "0.1" : "0.05";
-		console.log("Video fade-in transition applied");
 	}, 100);
 }
 
@@ -100,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			setTimeout(() => {
 				bgVideo.style.opacity = savedTheme === "dark" ? "0.1" : "0.05";
-				console.log("Starting video fade-in (10s)");
 			}, 1000);
 		});
 	}
