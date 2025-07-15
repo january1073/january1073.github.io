@@ -40,7 +40,6 @@ body {
   padding: 2rem;
   overflow-x: hidden;
   transition: all 0.3s ease;
-  /* Default for smaller screens (smartphone) */
   max-width: 95%;
   margin-left: 20px;
   margin-right: 20px;
@@ -191,6 +190,23 @@ li:hover {
   animation: pulse 1s infinite alternate;
 }
 
+.logo-container {
+  text-align: right;
+  margin: 2rem 0;
+  max-width: 100%;
+  padding-right: 20px;
+}
+
+.glitch-logo {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  width: 120px;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
 .ascii-container {
   -webkit-overflow-scrolling: touch;
   max-width: 100%;
@@ -210,6 +226,7 @@ li:hover {
   margin: 0;
   padding: 0.5rem 0;
 }
+
 
 .timestamp {
   font-family: monospace;
@@ -528,6 +545,10 @@ li:hover {
 
   .project-box img {
     height: auto;
+  }
+
+  .glitch-logo {
+    width: 120px;
   }
 }
 
