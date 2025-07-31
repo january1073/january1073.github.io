@@ -193,7 +193,7 @@ li:hover {
 .rss-toggle {
   position: fixed;
   top: 20px;
-  right: 105px;
+  right: 108px;
   z-index: 100;
   cursor: pointer;
   font-size: 1.8rem;
@@ -532,7 +532,7 @@ li:hover {
   .rss-toggle {
     position: fixed !important;
     top: 20px !important;
-    right: 105px !important;
+    right: 108px !important;
   }
 
   .background-video {
