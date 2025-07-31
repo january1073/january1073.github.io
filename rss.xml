@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+ <title>january1073 News Feed</title>
+ <link>https://january1073.github.io/rss.xml</link>
+ <description>Updates from january1073</description>
+ <language>en-us</language>
+ <lastBuildDate>Thu, 10 July 2025 00:00:00 GMT</lastBuildDate>
+ <item>
+  <title>The EU Cyber Resilience Act: Raising the Bar for Digital Product Security</title>
+  <link>https://january1073.medium.com/the-eu-cyber-resilience-act-raising-the-bar-for-digital-product-security-e7d643d0c897</link>
+  <description>The Cyber Resilience Act (CRA) entered into force on 10 December 2024, establishing mandatory cybersecurity requirements for all products with digital elements sold in the EU market. While the Act is now law, main obligations apply from 11 December 2027, with some requirements (like incident reporting) taking effect from 11 September 2026...</description>
+  <pubDate>Thu, 10 July 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>darkmailr — Generate realistic, context-aware phishing emails — air-gapped</title>
+  <link>https://infosecwriteups.com/darkmailr-generate-realistic-context-aware-phishing-emails-air-gapped-d3cc88457dab</link>
+  <description>darkmailr is a self-hosted, offline phishing simulation tool that uses open-source LLMs (via Ollama) to generate realistic, context-aware phishing emails for red team exercises, security awareness training, and prompt injection testing...</description>
+  <pubDate>Sun, 06 July 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>Red Team Adaptation in the Age of Agentic AI — A Game Theory Playbook for Offensive Security</title>
+  <link>https://january1073.medium.com/red-team-adaptation-in-the-age-of-agentic-ai-61ab4993386e</link>
+  <description>The game has changed. As a red teamer, you've mastered the art of thinking like your adversaries, exploiting human psychology, and finding the unexpected path through seemingly impenetrable defenses. But now you're facing something entirely different: agentic AI systems that don't get tired, don't make emotional decisions, and can process information at speeds that make your fastest reconnaissance look glacial...</description>
+  <pubDate>Sat, 05 July 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>NIS 2: Wie geht es jetzt weiter in Deutschland?</title>
+  <link>https://january1073.medium.com/nis-2-wie-geht-es-jetzt-weiter-in-deutschland-57df71d74203</link>
+  <description>Die Cybersicherheitslage in Deutschland ist angespannt, mit einem Höchststand an Cybercrime-Fällen in 2024 und astronomischen finanziellen Schäden, während viele Unternehmen unzureichend vorbereitet sind und die NIS-2-Richtlinie kaum kennen...</description>
+  <pubDate>Fri, 20 June 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>Cleartext Protocols 101: How to Connect Anonymously to FTP, Telnet, and rsync</title>
+  <link>https://osintteam.blog/cleartext-protocols-101-how-to-connect-anonymously-to-ftp-telnet-and-rsync-2c1001dcbdb0</link>
+  <description>Welcome back to the "100s Series"! After mastering network reconnaissance with tcpdump, Wireshark, and Nmap, it's time to explore what happens when you find open services. While modern security practices emphasize encryption and authentication, legacy cleartext protocols still lurk in corporate networks, IoT devices, and forgotten systems. File Transport Protocol (FTP), Telnet, and rsync often expose sensitive data through misconfigured anonymous access, default credentials, and unprotected file shares. This article will teach you to identify, access, and extract intelligence from such cleartext protocol implementations...</description>
+  <pubDate>Fri, 13 June 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>Your Client's Data Is Not Safe with Microsoft — And You Know It</title>
+  <link>https://january1073.medium.com/your-clients-data-is-not-safe-with-microsoft-and-you-know-it-1fa88fdbdcbb</link>
+  <description>EU lawyers are bound not only by the law, but by strict professional duties of confidentiality. Continuing to use the Microsoft ecosystem — which is subject to U.S. surveillance laws and known for opaque data handling practices — may violate core tenets of GDPR, EU Court rulings, and professional codes. The legal profession must move toward self-hosted, open-source, and EU-based services to protect client data and uphold the integrity of their work...</description>
+  <pubDate>Wed, 28 May 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>Nmap 101: Mapping Your Target's Attack Surface</title>
+  <link>https://osintteam.blog/nmap-101-mapping-your-targets-attack-surface-5bae9735c60d</link>
+  <description>Welcome back to the "100s Series"! After exploring network traffic analysis with tcpdump and Wireshark, it's time to shift from passive observation to active reconnaissance. Nmap (short for "Network Mapper") remains a cornerstone tool for network discovery and security auditing, turning hidden network infrastructures into comprehensive maps of potential attack surfaces. This comprehensive walkthrough will teach you to discover, enumerate, and analyze network targets with surgical precision...</description>
+  <pubDate>Sun, 25 May 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>Light Mode for Hack The Box</title>
+  <link>https://infosecwriteups.com/light-mode-for-hackthebox-bff9ed4c8922</link>
+  <description>Stop straining your eyes during marathon HTB Academy sessions...</description>
+  <pubDate>Sat, 24 May 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>Der Pentesting-Vertrag — Checkliste mit Musterklauseln</title>
+  <link>https://january1073.medium.com/der-pentesting-vertrag-961e19c5860e</link>
+  <description>Für IT-Sicherheitsunternehmen, die Penetrationstests anbieten oder in Auftrag geben, sind gut strukturierte Verträge essenziell für erfolgreiche Geschäftsbeziehungen. Ein präzise formulierter Pentesting-Vertrag schützt beide Parteien, definiert klare Erwartungen und minimiert rechtliche sowie betriebliche Risiken...</description>
+  <pubDate>Tue, 13 May 2025 12:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>Wireshark 101: Extracting Secrets from Captured Network Data</title>
+  <link>https://osintteam.blog/wireshark-101-extracting-secrets-from-captured-network-data-8f40bd3252f9</link>
+  <description>Welcome back to the "100s Series"! After our deep dive into the command-line wizardry of tcpdump, it's time to level up our network analysis game. Wireshark offers a user-friendly graphical approach to network analysis, providing a detailed look at the conversations happening on your network. This walkthrough will equip you with the skills to capture, filter, and analyze data with ease. Get ready to see your network traffic in a whole new light...</description>
+  <pubDate>Tue, 13 May 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>How I Flooded Myself 🫣 — hping3 Against Apache</title>
+  <link>https://infosecwriteups.com/how-i-flooded-myself-hping3-against-apache-c518cbab639f</link>
+  <description>A denial of service (DoS) attack floods a target system with malicious traffic, overwhelming it, and preventing legitimate users from accessing network resources. This I wanted to try at home — attacking my own machine, of course...</description>
+  <pubDate>Sun, 11 May 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>DORA Has Entered the Chat: EU's New Cyber Rulebook Reshaping Financial Security</title>
+  <link>https://infosecwriteups.com/dora-has-entered-the-chat-eus-new-cyber-rulebook-reshaping-financial-security-e2ce7dd95c5d</link>
+  <description>The EU's Digital Operational Resilience Act became applicable in January 2025, and it's changing the game for security professionals in the financial sector. Here's what you need to know...</description>
+  <pubDate>Fri, 02 May 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>tcpdump 101: Silently Capturing Your Target's Network Traffic</title>
+  <link>https://osintteam.blog/tcpdump-101-silently-capturing-your-targets-network-traffic-76b839e64232</link>
+  <description>If you can see the packets, you can understand the system — and if you can silently capture them, you're already halfway in. tcpdump is one of the most precise tools in an attacker's toolkit, and it's just as useful for defenders who want to think like one. This article launches my "100s Series," where I will walk you through key cybersecurity tools and strategies that sharpen your skills for both offense and defense. First up: tcpdump —your entry point to silent monitoring and powerful packet analysis...</description>
+  <pubDate>Tue, 29 Apr 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>From Panic to Action: How to Recover from a GCP Data Breach</title>
+  <link>https://january1073.medium.com/respond-and-recover-from-a-data-breach-in-google-cloud-capstone-project-of-the-google-cloud-634e1976fc88</link>
+  <description>For the Google Cloud Cybersecurity Certificate capstone project, in addition to video lectures and multiple-choice questions, I had to complete practical tasks in a Google Cloud lab and create a security incident report...</description>
+  <pubDate>Mon, 21 Apr 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>Finding Flaws 101: Scanning Metasploitable2 with Nessus Pro</title>
+  <link>https://january1073.medium.com/unmasking-metasploitable2-988d2ed3fe67</link>
+  <description>This write-up outlines the setup and execution of vulnerability scans using Nessus Professional against a Metasploitable2 virtual machine (VM) to demonstrate vulnerability assessment procedures...</description>
+  <pubDate>Mon, 14 Apr 2025 00:00:00 GMT</pubDate>
+ </item>
+ <item>
+  <title>Das chinesische Sozialkreditsystem für Unternehmen – Hintergründe und praktische Hinweise</title>
+  <link>https://www.springerprofessional.de/das-chinesische-sozialkreditsystem-fuer-unternehmen-hintergruend/18635734</link>
+  <description>Der vorliegende Beitrag erläutert die Hintergründe zur Einführung eines Sozialkreditsystems für Unternehmen in China. Die Autoren geben einen Überblick über die Auswirkungen des neuen Systems und liefern praktische Hinweise für Unternehmen, wie sie sich daran anpassen können. (Paywall)</description>
+  <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
+ </item>
+</channel>
+</rss>

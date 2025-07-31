@@ -138,7 +138,7 @@ li:hover {
 .theme-toggle {
   position: fixed;
   top: 20px;
-  right: 20px;
+  right: 140px;
   z-index: 100;
   cursor: pointer;
   font-size: 1.8rem;
@@ -158,7 +158,7 @@ li:hover {
 .audio-toggle {
   position: fixed;
   top: 20px;
-  right: 80px;
+  right: 200px;
   z-index: 100;
   cursor: pointer;
   font-size: 1.8rem;
@@ -188,6 +188,34 @@ li:hover {
 
 .audio-toggle.pulsing {
   animation: pulse 1s infinite alternate;
+}
+
+.rss-toggle {
+  position: fixed;
+  top: 20px;
+  right: 100px;
+  z-index: 100;
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+  color: var(--text);
+}
+
+.rss-toggle:hover {
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+}
+
+.rss-toggle svg {
+  fill: var(--text);
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: middle;
 }
 
 .logo-container {
@@ -492,13 +520,19 @@ li:hover {
   .theme-toggle {
     position: fixed !important;
     top: 20px !important;
-    right: 20px !important;
+    right: 140px !important;
   }
 
   .audio-toggle {
     position: fixed !important;
     top: 20px !important;
-    right: 80px !important;
+    right: 200px !important;
+  }
+
+  .rss-toggle {
+    position: fixed !important;
+    top: 20px !important;
+    right: 100px !important;
   }
 
   .background-video {
@@ -555,7 +589,8 @@ li:hover {
 @media print {
   .theme-toggle,
   .signature::after,
-  .audio-toggle {
+  .audio-toggle,
+  .rss-toggle {
     display: none;
   }
 
