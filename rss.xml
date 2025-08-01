@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
   <title>january1073 News Feed</title>
   <link>https://january1073.github.io/rss.xml</link>
   <description>Updates from january1073</description>
   <language>en-us</language>
   <atom:link href="https://january1073.github.io/rss.xml" rel="self" type="application/rss+xml" />
-  <lastBuildDate>Fri, 01 Aug 2025 18:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 01 Aug 2025 00:00:00 GMT</lastBuildDate>
 
   <item>
     <title>Cheating Permitted? German Federal Court of Justice Rules on ‘Action Replay II’</title>
