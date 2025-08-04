@@ -60,11 +60,91 @@
   </item>
 
   <item>
-    <title>5-Minute Guide to Binary Exploitation — ret2win with GDB and pwntools</title>
-    <link>https://infosecwriteups.com/5-minute-guide-to-binary-exploitation-ret2win-with-gdb-and-pwntools-22c4bc043293</link>
-    <guid isPermaLink="true">https://infosecwriteups.com/5-minute-guide-to-binary-exploitation-ret2win-with-gdb-and-pwntools-22c4bc043293</guid>
-    <description>This article introduces you to the basic concept of return-to-win (ret2win) exploitation, where the goal is to redirect execution flow to a desired function using a buffer overflow. It walks you through a simple binary with no stack canaries, NX disabled, and no PIE — making it a great playground for getting started with classic ROP-based techniques...</description>
+    <title>Your Client’s Data Is Not Safe with Microsoft — And You Know It</title>
+    <link>https://january1073.medium.com/your-clients-data-is-not-safe-with-microsoft-and-you-know-it-1fa88fdbdcbb</link>
+    <guid isPermaLink="true">https://january1073.medium.com/your-clients-data-is-not-safe-with-microsoft-and-you-know-it-1fa88fdbdcbb</guid>
+    <description>EU lawyers are bound not only by the law, but by strict professional duties of confidentiality. Continuing to use the Microsoft ecosystem — which is subject to U.S. surveillance laws and known for opaque data handling practices — may violate core tenets of GDPR, EU Court rulings, and professional codes. The legal profession must move toward self-hosted, open-source, and EU-based services to protect client data and uphold the integrity of their work...</description>
     <pubDate>Sat, 07 Jun 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Nmap 101: Mapping Your Target’s Attack Surface</title>
+    <link>https://osintteam.blog/nmap-101-mapping-your-targets-attack-surface-5bae9735c60d</link>
+    <guid isPermaLink="true">https://osintteam.blog/nmap-101-mapping-your-targets-attack-surface-5bae9735c60d</guid>
+    <description>Welcome back to the “100s Series”! [...]</description>
+    <pubDate>Sun, 25 May 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Light Mode for Hack The Box</title>
+    <link>https://infosecwriteups.com/light-mode-for-hackthebox-bff9ed4c8922</link>
+    <guid isPermaLink="true">https://infosecwriteups.com/light-mode-for-hackthebox-bff9ed4c8922</guid>
+    <description>Hack The Box doesn’t offer a light mode [...]</description>
+    <pubDate>Sat, 24 May 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Der Pentesting-Vertrag — Checkliste mit Musterklauseln</title>
+    <link>https://january1073.medium.com/der-pentesting-vertrag-961e19c5860e</link>
+    <guid isPermaLink="true">https://january1073.medium.com/der-pentesting-vertrag-961e19c5860e</guid>
+    <description>Für IT-Sicherheitsunternehmen [...]</description>
+    <pubDate>Tue, 13 May 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Wireshark 101: Extracting Secrets from Captured Network Data</title>
+    <link>https://osintteam.blog/wireshark-101-extracting-secrets-from-captured-network-data-8f40bd3252f9</link>
+    <guid isPermaLink="true">https://osintteam.blog/wireshark-101-extracting-secrets-from-captured-network-data-8f40bd3252f9</guid>
+    <description>Welcome back to the “100s Series”! [...]</description>
+    <pubDate>Tue, 13 May 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>How I Flooded Myself 🫣 — hping3 Against Apache</title>
+    <link>https://infosecwriteups.com/how-i-flooded-myself-hping3-against-apache-c518cbab639f</link>
+    <guid isPermaLink="true">https://infosecwriteups.com/how-i-flooded-myself-hping3-against-apache-c518cbab639f</guid>
+    <description>A denial of service (DoS) attack floods a target system [...]</description>
+    <pubDate>Sun, 11 May 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>DORA Has Entered the Chat: EU’s New Cyber Rulebook Reshaping Financial Security</title>
+    <link>https://infosecwriteups.com/dora-has-entered-the-chat-eus-new-cyber-rulebook-reshaping-financial-security-e2ce7dd95c5d</link>
+    <guid isPermaLink="true">https://infosecwriteups.com/dora-has-entered-the-chat-eus-new-cyber-rulebook-reshaping-financial-security-e2ce7dd95c5d</guid>
+    <description>The EU’s Digital Operational Resilience Act became applicable [...]</description>
+    <pubDate>Fri, 02 May 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>tcpdump 101: Silently Capturing Your Target’s Network Traffic</title>
+    <link>https://osintteam.blog/tcpdump-101-silently-capturing-your-targets-network-traffic-76b839e64232</link>
+    <guid isPermaLink="true">https://osintteam.blog/tcpdump-101-silently-capturing-your-targets-network-traffic-76b839e64232</guid>
+    <description>If you can see the packets, you can understand the system [...]</description>
+    <pubDate>Tue, 29 Apr 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>From Panic to Action: How to Recover from a GCP Data Breach</title>
+    <link>https://january1073.medium.com/respond-and-recover-from-a-data-breach-in-google-cloud-capstone-project-of-the-google-cloud-634e1976fc88</link>
+    <guid isPermaLink="true">https://january1073.medium.com/respond-and-recover-from-a-data-breach-in-google-cloud-capstone-project-of-the-google-cloud-634e1976fc88</guid>
+    <description>For the Google Cloud Cybersecurity Certificate capstone project [...]</description>
+    <pubDate>Mon, 21 Apr 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Finding Flaws 101: Scanning Metasploitable2 with Nessus Pro</title>
+    <link>https://january1073.medium.com/unmasking-metasploitable2-988d2ed3fe67</link>
+    <guid isPermaLink="true">https://january1073.medium.com/unmasking-metasploitable2-988d2ed3fe67</guid>
+    <description>This write-up outlines the setup and execution of vulnerability scans [...]</description>
+    <pubDate>Mon, 14 Apr 2025 00:00:00 GMT</pubDate>
+  </item>
+
+  <item>
+    <title>Das chinesische Sozialkreditsystem für Unternehmen – Hintergründe und praktische Hinweise</title>
+    <link>https://www.springerprofessional.de/das-chinesische-sozialkreditsystem-fuer-unternehmen-hintergruend/18635734</link>
+    <guid isPermaLink="true">https://www.springerprofessional.de/das-chinesische-sozialkreditsystem-fuer-unternehmen-hintergruend/18635734</guid>
+    <description>Der vorliegende Beitrag erläutert die Hintergründe zur Einführung [...]</description>
+    <pubDate>Wed, 01 Apr 2020 00:00:00 GMT</pubDate>
   </item>
 
 </channel>
