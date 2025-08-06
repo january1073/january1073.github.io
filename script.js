@@ -147,12 +147,12 @@ window.help = function() {
     console.log('%cAvailable commands:', 'font-weight: bold;');
     console.log('help() - Show this help');
     console.log('about() - About this site');
-    console.log('Try exploring the code... there might be hidden functions 🔍');
+    console.log('Three flags are hidden in the code of this website. There might be hidden functions...');
 };
 
 window.about = function() {
     console.log('%cPortfolio by january1073', 'color: #21a5e3; font-weight: bold;');
-    console.log('Built with vanilla JS, CSS, and lots of coffee ☕');
+    console.log('Built with HTML, CSS, vanilla JS, and lots of coffee ☕');
     console.log('Looking for flags? Keep digging... 🏴‍☠️');
 };
 
