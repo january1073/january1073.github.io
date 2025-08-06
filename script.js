@@ -1,3 +1,21 @@
+console.log(`
+  _________________________
+ < Can you find the flags? >
+  -------------------------
+         \\
+          \\
+                                     .::!!!!!!!:.
+      .!!!!!:.                      .:!!!!!!!!!!!!
+      ~~~~!!!!!!.               .:!!!!!!!!!UWWW$$$
+          :$$NWX!!:          .:!!!!!!XUWW$$$$$$$$$P
+          $$$$$##WX!:      <!!!!UW$$$$"  $$$$$$$$#
+          $$$$$  $$$UX   :!!UW$$$$$$$$$   4$$$$$*
+          ^$$$B  $$$$     $$$$$$$$$$$$   d$$R"
+            "*$bd$$$$     '*$$$$$$$$$$$o+#"
+                 """"          """""""
+
+`);
+
 function toggleTheme() {
 	const currentTheme = document.body.dataset.theme;
 	const newTheme = currentTheme === "" ? "dark" : "";
