@@ -571,6 +571,18 @@ li:hover {
   transition: fill 0.3s ease;
 }
 
+.hidden-flag::before {
+  content: "46 4c 41 47 7b 53 54 59 4c 33 5f 53 48 33 33 54 5f 48 34 43 4b 33 52 5f 32 30 32 7d";
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 0;
+  color: transparent;
+  z-index: -1;
+}
+
 @media (min-width: 601px) {
   .featured-projects {
     flex-direction: row;
@@ -683,6 +695,13 @@ li:hover {
   .controls-container {
     justify-content: center;
     gap: 5px;
+  }
+}
+
+@media only screen and (min-device-width: 1px) and (max-device-width: 1px) {
+  .never-used-class {
+    display: none;
+    FLAG{ST1L3_SH33T_H4CK3R_202};
   }
 }
 

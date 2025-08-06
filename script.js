@@ -16,6 +16,13 @@ console.log(`
 
 `);
 
+const _0x4f2a = ['RkxBR3tK', 'NGFtNFN', 'DUjFQV', 'H0FFX', '04D', 'M0M1', 'TH0', 'M3DVE'];
+const _debug = {
+    mode: false,
+    level: 0,
+    trace: function() { return this.mode && this.level > 2; }
+};
+
 function toggleTheme() {
 	const currentTheme = document.body.dataset.theme;
 	const newTheme = currentTheme === "" ? "dark" : "";
@@ -39,6 +46,43 @@ function updateVideoBackground(theme) {
 		bgVideo.style.opacity = theme === "dark" ? "0.1" : "0.05";
 	}, 100);
 }
+
+function _assembleSecretData() {
+    try {
+        if (typeof window !== 'undefined' && window.location) {
+            const parts = [
+                atob(_0x4f2a[0]),
+                atob(_0x4f2a[1]),
+                atob(_0x4f2a[2]),
+                atob(_0x4f2a[3]),
+                atob(_0x4f2a[4])
+            ];
+            return parts.join('');
+        }
+    } catch(e) {
+        return null;
+    }
+    return null;
+}
+
+window.revealHiddenFlag = function() {
+    const hiddenData = _assembleSecretData();
+    if (hiddenData) {
+        console.log('%c🚩 FLAG FOUND!', 'color: #ff6b6b; font-size: 16px; font-weight: bold;');
+        console.log('%c' + hiddenData, 'color: #4ecdc4; font-size: 14px; background: #2c3e50; padding: 5px;');
+        return hiddenData;
+    }
+    return 'No flag found';
+};
+
+setTimeout(() => {
+    if (_debug.trace()) {
+        const secretFlag = _assembleSecretData();
+        console.group('%cDebugging Info', 'color: #666; font-size: 12px;');
+        console.log('Secret data assembled:', secretFlag);
+        console.groupEnd();
+    }
+}, 5000);
 
 function setupAccordion(headerId, bodyId) {
     const accordionHeader = document.getElementById(headerId);
@@ -98,6 +142,19 @@ function setupAccordion(headerId, bodyId) {
         }
     });
 }
+
+window.help = function() {
+    console.log('%cAvailable commands:', 'font-weight: bold;');
+    console.log('help() - Show this help');
+    console.log('about() - About this site');
+    console.log('Try exploring the code... there might be hidden functions 🔍');
+};
+
+window.about = function() {
+    console.log('%cPortfolio by january1073', 'color: #21a5e3; font-weight: bold;');
+    console.log('Built with vanilla JS, CSS, and lots of coffee ☕');
+    console.log('Looking for flags? Keep digging... 🏴‍☠️');
+};
 
 document.addEventListener("DOMContentLoaded", () => {
 	const savedTheme = localStorage.getItem("theme");
@@ -203,7 +260,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.warn("Element with ID 'readme-section' not found.");
     }
 
-
     fetch('https://api.github.com/repos/january1073/january1073.github.io/commits/main')
         .then(r => r.json())
         .then(data => {
@@ -216,4 +272,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         })
         .catch(error => console.error('Error fetching last commit:', error));
+
+    console.log('%cHint: Try typing help() in the console 🔍', 'color: #888; font-style: italic;');
 });
