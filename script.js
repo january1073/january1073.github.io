@@ -16,7 +16,7 @@ console.log(`
 
 `);
 
-const _0x4f2a = ['RkxBR3tK', 'NGFtNFN', 'DUjFQV', 'H0FFX', '04D', 'M0M1', 'TH0', 'M3DVE'];
+const _0x4f2a = ['RkxBR3tK', 'NFY0U0NS', 'MVBUX04x', 'TkpBXzMw', 'M30='];
 const _debug = {
     mode: false,
     level: 0,
@@ -152,8 +152,8 @@ window.help = function() {
 
 window.about = function() {
     console.log('%cPortfolio by january1073', 'color: #21a5e3; font-weight: bold;');
-    console.log('Built with HTML, CSS, vanilla JS, and lots of coffee ☕');
-    console.log('Looking for flags? Keep digging... 🏴‍☠️');
+    console.log('Built with HTML, CSS, vanilla JS, and lots of coffee.');
+    console.log('Looking for flags? Keep digging...');
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -188,7 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const backgroundAudio = document.getElementById('backgroundAudio');
     const audioToggle = document.getElementById('audioToggle');
     const audioIcon = audioToggle ? audioToggle.querySelector('.audio-on-icon') : null;
-
 
     if (audioToggle && backgroundAudio && audioIcon) {
         if (backgroundAudio.paused) {
