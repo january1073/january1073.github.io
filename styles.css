@@ -578,6 +578,38 @@ li:hover {
   transition: fill 0.3s ease;
 }
 
+.biolinks {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.biolinks a {
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+}
+
+.biolinks a:hover {
+  transform: scale(1.2) rotate(3deg);
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+}
+
+.biolinks a:active {
+  transform: scale(0.95);
+}
+
+.biolinks img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
 .hidden-flag::before {
   content: "46 4c 41 47 7b 53 54 59 4c 33 5f 53 48 33 33 54 5f 48 34 43 4b 33 52 5f 32 30 32 7d";
   position: absolute;
