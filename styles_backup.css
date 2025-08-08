@@ -735,26 +735,6 @@ li:hover {
     justify-content: center;
     gap: 5px;
   }
-  .scroll-to-top {
-    right: 1rem !important;
-    left: auto !important;
-  }
-
-  .biolinks {
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .biolinks a {
-    flex: 0 0 auto;
-  }
-
-  .biolinks img {
-    width: 28px;
-    height: 28px;
-  }
-
 }
 
 @media only screen and (min-device-width: 1px) and (max-device-width: 1px) {
