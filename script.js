@@ -274,3 +274,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log('%cHint: Try typing help() in the console 🔍', 'color: #888; font-style: italic;');
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    scrollBtn.style.position = "fixed";
+    scrollBtn.style.bottom = "1rem";
+    scrollBtn.style.right = "1rem";
+    scrollBtn.style.left = "auto";
+  }
+});
