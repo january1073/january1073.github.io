@@ -32,6 +32,10 @@
   --divider-color: rgba(0, 255, 0, 0.3);
 }
 
+.scroll-to-top {
+  left: auto !important;
+  right: 2rem !important;
+}
 body {
   background: var(--bg);
   color: var(--text);
@@ -737,12 +741,13 @@ li:hover {
   }
   .scroll-to-top {
     right: 1rem !important;
-    left: auto !important;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .biolinks {
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 10px;
   }
 
