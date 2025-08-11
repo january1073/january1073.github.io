@@ -6,12 +6,12 @@ console.log(`
           \\
                                      .::!!!!!!!:.
       .!!!!!:.                      .:!!!!!!!!!!!!
-      ~~~~!!!!!!.               .:!!!!!!!!!UWWW$$
-          :$NWX!!:          .:!!!!!!XUWW$$$$$P
-          $$$##WX!:      <!!!!UW$$"  $$$$#
-          $$$  $$UX   :!!UW$$$$$   4$$$*
-          ^$$B  $$     $$$$$$   d$R"
-            "*$bd$$     '*$$$$$$o+#"
+      ~~~~!!!!!!.               .:!!!!!!!!!UWWW$
+          :$NWX!!:          .:!!!!!!XUWW$$$P
+          $$##WX!:      <!!!!UW$"  $$#
+          $$  $UX   :!!UW$$$   4$$*
+          ^$B  $     $$$   d$R"
+            "*$bd$     '*$$$o+#"
                  """"          """""""
 
 `);
@@ -257,6 +257,28 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(readmeSection);
     } else {
         console.warn("Element with ID 'readme-section' not found.");
+    }
+
+    const projectBoxes = document.querySelectorAll('.project-box');
+    if (projectBoxes.length > 0) {
+        const projectObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(projectBoxes).indexOf(entry.target);
+                    setTimeout(() => {
+                        entry.target.classList.add('fly-in');
+                    }, index * 200);
+                    projectObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '50px'
+        });
+
+        projectBoxes.forEach(box => {
+            projectObserver.observe(box);
+        });
     }
 
     fetch('https://api.github.com/repos/january1073/january1073.github.io/commits/main')

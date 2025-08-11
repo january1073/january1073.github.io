@@ -451,16 +451,26 @@ li:hover {
   align-items: center;
   text-align: center;
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
   width: 216px;
   height: 270px;
   flex-shrink: 0;
   overflow: hidden;
   border-radius: 4px;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease,
+              outline 0.3s ease;
+}
+
+.project-box.fly-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .project-box:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   outline: 1px solid var(--link-hover);
   outline-offset: 2px;

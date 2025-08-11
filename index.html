@@ -17,10 +17,846 @@
   <link rel="manifest" href="/icons/site.webmanifest">
   <link rel="me" href="https://infosec.exchange/@january1073">
   <link rel="preconnect" href="https://fonts.bunny.net">
-  <link href="https://fonts.bunny.net/css?family=silkscreen:400" rel="stylesheet">
+  <link href="https://fonts.bunny.net/css?family=lacquer:400" rel="stylesheet">
   <link rel="security" href="/well-known/security.txt" type="text/plain">
-  <link rel="stylesheet" href="styles.css">
   <title>january1073 || portfolio</title>
+  <style>
+:root {
+  --bg: #f8f8f8;
+  --h1-color: #000000;
+  --code-box-border: #21a5e3;
+  --code-box-bg: rgba(243, 243, 243, 0.5);
+  --text: #1c1c1c;
+  --link: #1c1c1c;
+  --link-hover: #21a5e3;
+  --selection-bg: #1c1c1c;
+  --selection-text: #FFFFFF;
+  --terminal-accent: #607D8B;
+  --border-color: #d0d0d0;
+  --audio-icon-on-color: #A9A9A9;
+  --audio-icon-off-color: #1c1c1c;
+  --divider-color: rgba(28, 28, 28, 0.3);
+}
+
+[data-theme="dark"] {
+  --bg: #000000;
+  --h1-color: #00FF00;
+  --code-box-border: #008000;
+  --code-box-bg: rgba(0, 50, 0, 0.6);
+  --text: #00FF00;
+  --link: #00FF00;
+  --link-hover: #39FF14;
+  --selection-bg: #008000;
+  --selection-text: #000000;
+  --terminal-accent: #00FF00;
+  --border-color: #008000;
+  --audio-icon-on-color: #004000;
+  --audio-icon-off-color: #39FF14;
+  --divider-color: rgba(0, 255, 0, 0.3);
+}
+
+.scroll-to-top {
+  left: auto !important;
+  right: 2rem !important;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Courier New', monospace;
+  line-height: 1.5;
+  padding: 2rem;
+  padding-top: 6rem;
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+  max-width: 95%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+body:not([data-theme="dark"]) {
+  background:
+    linear-gradient(rgba(248, 248, 248, 0.9), rgba(248, 248, 248, 0.9)),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' %3E%3Cpath d='M0 0h60v60H0z' fill='%23f0f0f0'/%3E%3Cpath d='M0 0L60 60M60 0L0 60' stroke='%23e0e0e0' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--code-box-bg);
+  border: none;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-ascii {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: var(--h1-color);
+  line-height: 1;
+  letter-spacing: -0.5px;
+  white-space: pre;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.controls-container {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+h1 {
+  color: var(--h1-color);
+  font-family: 'Lacquer', 'Courier New', monospace;
+  font-size: 3.0em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+
+}
+
+h2 {
+  color: var(--h1-color);
+  font-size: 2.0em;
+  font-family: 'Lacquer', 'Courier New', monospace;
+  font-weight: 400;
+}
+
+em {
+  font-style: normal;
+  color: var(--link-hover);
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  background: linear-gradient(0deg, var(--link), var(--link)) no-repeat right bottom / 0 1px;
+  transition: background-size 0.5s, border-color 0.5s, color 0.5s;
+}
+
+a:hover {
+  border-bottom: 1px solid var(--link-hover);
+  background: linear-gradient(0deg, var(--link-hover), var(--link-hover)) no-repeat left bottom / 100% 1px;
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+mark {
+  background: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+pre {
+  margin: 0;
+}
+
+ul {
+  list-style-type: "> ";
+  padding-left: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  transition: transform 0.1s ease-out;
+}
+
+li:hover {
+  transform: translateY(-2px);
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+  display: none;
+}
+
+.background-video {
+  position: fixed;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: blur(1px) grayscale(20%);
+}
+
+.video-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 10px;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2) rotate(3deg);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.audio-toggle {
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 10px;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.audio-toggle svg {
+  fill: var(--audio-icon-on-color);
+  width: 1.8rem;
+  height: 1.8rem;
+  vertical-align: middle;
+}
+
+.audio-toggle.audio-off-state svg {
+  fill: var(--audio-icon-off-color);
+}
+
+.audio-toggle:hover {
+  transform: scale(1.2) rotate(3deg);
+}
+
+.audio-toggle:active {
+  transform: scale(0.95);
+}
+
+.audio-toggle.pulsing {
+  animation: pulse 1s infinite alternate;
+}
+
+.rss-toggle {
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+  color: var(--text);
+}
+
+.rss-toggle:hover {
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+}
+
+.rss-toggle svg {
+  fill: var(--text);
+  width: 1.3rem;
+  height: 1.3rem;
+  vertical-align: middle;
+}
+
+.logo-container {
+  text-align: right;
+  margin: 1rem 0;
+  max-width: 100%;
+  padding-right: 20px;
+}
+
+.glitch-logo {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  width: 120px;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
+
+.ascii-container {
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0 auto;
+  text-align: start;
+}
+
+.ascii-art {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(0.5rem, 2.5vw, 0.8rem);
+  color: var(--h1-color);
+  line-height: 1;
+  letter-spacing: -0.5px;
+  white-space: pre;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.timestamp {
+  font-family: monospace;
+  color: #808080;
+  font-size: 0.7rem;
+}
+
+.whoami {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.image-box {
+  flex-shrink: 0;
+  width: 216px;
+  height: 216px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.text-box {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.code-box {
+  background-color: var(--code-box-bg);
+  border: 0.5px solid var(--code-box-border);
+  font-size: 0.84rem;
+  padding: 7px;
+  margin: 5px;
+  font-family: monospace;
+  display: inline-block;
+  box-shadow: none;
+}
+
+.small-text {
+  color: #808080;
+  font-size: 0.7rem;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  padding: 0px 20px;
+  color: #666;
+  font-size: 0.7rem;
+  z-index: 100;
+  text-align: right;
+}
+
+.signature::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+  color: var(--cursor);
+  text-shadow: 0 0 8px var(--cursor), 0 0 12px var(--cursor);
+}
+
+.accordion-header {
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+}
+
+.accordion-arrow {
+  transition: transform 0.3s ease;
+}
+
+.accordion-header:hover .accordion-arrow {
+  transform: scale(1.2);
+}
+
+.accordion-header.active .accordion-arrow {
+  transform: rotate(90deg);
+}
+
+.accordion-body {
+  display: none;
+  color: var(--text);
+  margin: 0;
+  padding-top: 0.2em;
+  padding-left: 1.5em;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform: translateY(-5px);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.accordion-body.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion-body.tree pre {
+  font-family: monospace;
+  font-size: 0.8rem;
+  background-color: var(--code-box-bg, #f9f9f9);
+  border: 1px solid var(--code-box-border, #ccc);
+  padding: 1em;
+  margin: 0;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.accordion-body.tree pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.accordion-body.tree pre::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 4px;
+}
+
+.arrow-space {
+  width: 0.5em;
+}
+
+.featured-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-box {
+  background-color: var(--bg);
+  border: none;
+  padding: 5px;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  width: 216px;
+  height: 270px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(50px) scale(0.8);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease,
+              outline 0.3s ease;
+}
+
+.project-box.fly-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-box:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  outline: 1px solid var(--link-hover);
+  outline-offset: 2px;
+}
+
+.project-box img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.project-box p {
+  font-size: 0.8rem;
+  color: var(--text);
+  margin: 0;
+  padding-bottom: 10px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: text-shadow 0.3s ease;
+}
+
+.project-box:hover p {
+  text-shadow: 0 0 5px var(--link-hover);
+}
+
+.project-box a {
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.project-box a:hover {
+  border-bottom: none;
+  background: none;
+}
+
+.fading-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--divider-color), transparent);
+  margin: 2rem 0;
+}
+
+.hidden-on-load {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+.visible-on-scroll {
+  visibility: visible;
+  opacity: 1;
+  height: auto;
+  overflow: visible;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background: var(--code-box-bg);
+  border: 0.5px solid var(--code-box-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: var(--link-hover);
+  border-color: var(--link-hover);
+}
+
+.scroll-to-top:hover svg {
+  fill: var(--bg);
+}
+
+.scroll-to-top:active {
+  transform: translateY(-2px) scale(0.95);
+}
+
+.scroll-to-top svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: var(--text);
+  transition: fill 0.3s ease;
+}
+
+.biolinks {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.biolinks a {
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+}
+
+.biolinks a:hover {
+  transform: scale(1.2) rotate(3deg);
+  text-decoration: none;
+  border-bottom: none;
+  background: none;
+}
+
+.biolinks a:active {
+  transform: scale(0.95);
+}
+
+.biolinks img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.hidden-flag::before {
+  content: "46 4c 41 47 7b 53 54 59 4c 33 5f 53 48 33 33 54 5f 48 34 43 4b 33 52 5f 32 30 32 7d";
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 0;
+  color: transparent;
+  z-index: -1;
+}
+
+@media (min-width: 601px) {
+  .featured-projects {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .project-box {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  body {
+    max-width: 60%;
+    margin: 0 auto;
+    padding-top: 6rem;
+  }
+
+  .navbar {
+    padding: 1rem calc((100% - 60%) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .video-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: -999;
+    pointer-events: none;
+  }
+
+  .background-video {
+    position: fixed;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+  }
+
+  .video-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  }
+
+  body > *:not(.video-background):not(.video-overlay) {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+    padding-top: 5rem;
+    font-size: 0.9rem;
+  }
+
+  .navbar {
+    padding: 0.8rem 1rem;
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .scroll-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .scroll-to-top svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .navbar-ascii {
+    font-size: 0.6rem;
+  }
+
+  pre {
+    font-size: 0.7rem;
+    white-space: pre-wrap;
+  }
+
+  ul {
+    padding-left: 1.2rem;
+  }
+
+  .project-box {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-box img {
+    height: auto;
+  }
+
+  .glitch-logo {
+    width: 120px;
+  }
+
+  .controls-container {
+    justify-content: center;
+    gap: 5px;
+  }
+  .scroll-to-top {
+    right: 1rem !important;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .biolinks {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .biolinks a {
+    flex: 0 0 auto;
+  }
+
+  .biolinks img {
+    width: 28px;
+    height: 28px;
+  }
+
+}
+
+@media only screen and (min-device-width: 1px) and (max-device-width: 1px) {
+  .never-used-class {
+    display: none;
+    FLAG{ST1L3_SH33T_H4CK3R_202};
+  }
+}
+
+@media print {
+  .theme-toggle,
+  .signature::after,
+  .audio-toggle,
+  .rss-toggle,
+  .controls-container {
+    display: none;
+  }
+
+  body {
+    --bg: #fff !important;
+    --text: #000 !important;
+    --link: #0066cc !important;
+  }
+
+  a {
+    border-bottom: none;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease-out forwards;
+}
+  </style>
 </head>
 <body>
   <div class="video-background">
@@ -98,7 +934,7 @@
   <div class="fading-line"></div>
 
   <div id="readme-section" class="hidden-on-load">
-    <h1>> cat readme.txt</h1>
+    <h2>> cat readme.txt</h2>
     <p>Welcome. I'm a lawyer turned infosec practitioner with a passion for clarity, structure, and threat surface reduction. Below, you can explore some of my technical, non-legal <em>projects</em>, the <em>CTFs</em> I participated, my introductory <em>100s Series</em>, and other <em>publications</em>. Got a thought, idea, or exploit in mind? Ping me anytime.</p>
     <p class="small-text"><span class="signature">tail -f learning.log </span></p>
   </div>
@@ -109,7 +945,7 @@
     <div class="accordion-header" id="projectsAccordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h1>ls /projects</h1>
+      <div></div><h2>ls /projects</h2>
     </div>
     <div id="projectsAccordionBody" class="accordion-body">
       <p><a href="/projects/learnings.md"  target="_blank">Key takeaways from my projects</a></p>
@@ -126,7 +962,7 @@
     <div class="accordion-header" id="ctfsAccordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h1>ls /ctfs</h1>
+      <div></div><h2>ls /ctfs</h2>
     </div>
     <div id="ctfsAccordionBody" class="accordion-body">
       <ul>
@@ -139,7 +975,7 @@
     <div class="accordion-header" id="seriesAccordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h1>ls /100s_series</h1>
+      <div></div><h2>ls /100s_series</h2>
     </div>
     <div id="seriesAccordionBody" class="accordion-body">
       <ul>
@@ -155,7 +991,7 @@
     <div class="accordion-header" id="publicationsAccordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h1>ls /publications</h1>
+      <div></div><h2>ls /publications</h2>
     </div>
     <div id="publicationsAccordionBody" class="accordion-body">
       <ul>
@@ -177,7 +1013,7 @@
     <div class="accordion-header" id="accordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h1>tree /bio</h1></div>
+      <div></div><h2>tree /bio</h2></div>
     </div>
   <div id="accordionBody" class="accordion-body tree">
           <pre>
@@ -244,6 +1080,315 @@ bio
 
   <audio id="backgroundAudio" src="media/audio.ogx" loop preload="auto"></audio>
 
-  <script src="script.js"></script>
+  <script>
+console.log(`
+  _________________________
+ < Can you find the flags? >
+  -------------------------
+         \\
+          \\
+                                     .::!!!!!!!:.
+      .!!!!!:.                      .:!!!!!!!!!!!!
+      ~~~~!!!!!!.               .:!!!!!!!!!UWWW$
+          :$NWX!!:          .:!!!!!!XUWW$$$P
+          $$##WX!:      <!!!!UW$"  $$#
+          $$  $UX   :!!UW$$$   4$$*
+          ^$B  $     $$$   d$R"
+            "*$bd$     '*$$$o+#"
+                 """"          """""""
+
+`);
+
+const _0x4f2a = ['RkxBR3tK', 'NFY0U0NS', 'MVBUX04x', 'TkpBXzMw', 'M30='];
+const _debug = {
+    mode: false,
+    level: 0,
+    trace: function() { return this.mode && this.level > 2; }
+};
+
+function toggleTheme() {
+	const currentTheme = document.body.dataset.theme;
+	const newTheme = currentTheme === "" ? "dark" : "";
+	document.body.dataset.theme = newTheme;
+	localStorage.setItem("theme", newTheme);
+	updateVideoBackground(newTheme);
+}
+
+function updateVideoBackground(theme) {
+	const bgVideoContainer = document.querySelector(".video-background");
+	const bgVideo = document.getElementById("bgVideo");
+
+	if (!bgVideoContainer || !bgVideo) return;
+
+	bgVideoContainer.style.display = "block";
+	bgVideo.style.opacity = "0";
+	void bgVideo.offsetWidth;
+	bgVideo.style.transition = "opacity 30s linear";
+
+	setTimeout(() => {
+		bgVideo.style.opacity = theme === "dark" ? "0.1" : "0.05";
+	}, 100);
+}
+
+function _assembleSecretData() {
+    try {
+        if (typeof window !== 'undefined' && window.location) {
+            const parts = [
+                atob(_0x4f2a[0]),
+                atob(_0x4f2a[1]),
+                atob(_0x4f2a[2]),
+                atob(_0x4f2a[3]),
+                atob(_0x4f2a[4])
+            ];
+            return parts.join('');
+        }
+    } catch(e) {
+        return null;
+    }
+    return null;
+}
+
+window.revealHiddenFlag = function() {
+    const hiddenData = _assembleSecretData();
+    if (hiddenData) {
+        console.log('%c🚩 FLAG FOUND!', 'color: #ff6b6b; font-size: 16px; font-weight: bold;');
+        console.log('%c' + hiddenData, 'color: #4ecdc4; font-size: 14px; background: #2c3e50; padding: 5px;');
+        return hiddenData;
+    }
+    return 'No flag found';
+};
+
+setTimeout(() => {
+    if (_debug.trace()) {
+        const secretFlag = _assembleSecretData();
+        console.group('%cDebugging Info', 'color: #666; font-size: 12px;');
+        console.log('Secret data assembled:', secretFlag);
+        console.groupEnd();
+    }
+}, 5000);
+
+function setupAccordion(headerId, bodyId) {
+    const accordionHeader = document.getElementById(headerId);
+    const accordionBody = document.getElementById(bodyId);
+
+    if (!accordionHeader || !accordionBody) {
+        console.warn(`Accordion elements not found for headerId: ${headerId}, bodyId: ${bodyId}`);
+        return;
+    }
+
+    accordionHeader.addEventListener('click', () => {
+        const headerRect = accordionHeader.getBoundingClientRect();
+        const isHeaderVisible = (
+            headerRect.top >= 0 &&
+            headerRect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+        );
+
+        if (!accordionBody.classList.contains('visible')) {
+            accordionBody.style.display = 'block';
+            accordionBody.style.opacity = '0';
+            accordionBody.style.transform = 'translateY(-5px)';
+
+            void accordionBody.offsetHeight;
+
+            accordionBody.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
+            accordionBody.style.opacity = '1';
+            accordionBody.style.transform = 'translateY(0)';
+
+            accordionBody.classList.add('visible');
+            accordionHeader.classList.add('active');
+
+            if (!isHeaderVisible) {
+                setTimeout(() => {
+                    accordionHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setTimeout(() => window.scrollBy(0, -20), 500);
+                }, 100);
+            }
+        } else {
+            accordionBody.classList.add('fade-out');
+
+            setTimeout(() => {
+                accordionBody.style.display = 'none';
+                accordionBody.classList.remove('visible');
+                accordionBody.classList.remove('fade-out');
+                accordionHeader.classList.remove('active');
+
+                accordionBody.style.opacity = '0';
+                accordionBody.style.transform = 'translateY(-5px)';
+            }, 400);
+
+            if (!isHeaderVisible) {
+                setTimeout(() => {
+                    accordionHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setTimeout(() => window.scrollBy(0, -20), 500);
+                }, 100);
+            }
+        }
+    });
+}
+
+window.help = function() {
+    console.log('%cAvailable commands:', 'font-weight: bold;');
+    console.log('help() - Show this help');
+    console.log('about() - About this site');
+    console.log('Three flags are hidden in the code of this website. There might be hidden functions...');
+};
+
+window.about = function() {
+    console.log('%cPortfolio by january1073', 'color: #21a5e3; font-weight: bold;');
+    console.log('Built with HTML, CSS, vanilla JS, and lots of coffee.');
+    console.log('Looking for flags? Keep digging...');
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+	const savedTheme = localStorage.getItem("theme");
+	document.body.dataset.theme = savedTheme ? savedTheme : "";
+
+	const bgVideoContainer = document.querySelector(".video-background");
+	const bgVideo = document.getElementById("bgVideo");
+
+	if (bgVideoContainer && bgVideo) {
+		bgVideoContainer.style.display = "block";
+		bgVideo.style.visibility = "visible";
+		bgVideo.style.opacity = "0";
+		bgVideo.playbackRate = 0.75;
+
+		window.addEventListener('load', () => {
+			bgVideo.style.transition = "opacity 10s linear";
+
+			setTimeout(() => {
+				bgVideo.style.opacity = savedTheme === "dark" ? "0.1" : "0.05";
+			}, 1000);
+		});
+	}
+
+    const themeToggle = document.querySelector(".theme-toggle");
+    if (themeToggle) {
+        themeToggle.addEventListener("click", toggleTheme);
+    } else {
+        console.warn("Theme toggle button not found.");
+    }
+
+    const backgroundAudio = document.getElementById('backgroundAudio');
+    const audioToggle = document.getElementById('audioToggle');
+    const audioIcon = audioToggle ? audioToggle.querySelector('.audio-on-icon') : null;
+
+    if (audioToggle && backgroundAudio && audioIcon) {
+        if (backgroundAudio.paused) {
+            audioToggle.classList.add('audio-off-state');
+        } else {
+            audioToggle.classList.remove('audio-off-state');
+        }
+
+        audioToggle.classList.add('pulsing');
+        setTimeout(() => {
+            audioToggle.classList.remove('pulsing');
+        }, 2000);
+
+        audioToggle.addEventListener('click', () => {
+            if (backgroundAudio.paused) {
+                backgroundAudio.play().then(() => {
+                    audioToggle.classList.remove('audio-off-state');
+                    audioToggle.classList.remove('pulsing');
+                }).catch(error => {
+                    console.error("Audio playback failed:", error);
+                });
+            } else {
+                backgroundAudio.pause();
+                audioToggle.classList.add('audio-off-state');
+            }
+        });
+    } else {
+        console.warn("Audio elements not found or SVG icon missing.");
+    }
+
+    setupAccordion('accordionHeader', 'accordionBody');
+    setupAccordion('projectsAccordionHeader', 'projectsAccordionBody');
+    setupAccordion('ctfsAccordionHeader', 'ctfsAccordionBody');
+    setupAccordion('seriesAccordionHeader', 'seriesAccordionBody');
+    setupAccordion('publicationsAccordionHeader', 'publicationsAccordionBody');
+
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    if (scrollToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopButton.classList.add('visible');
+            } else {
+                scrollToTopButton.classList.remove('visible');
+            }
+        });
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    const readmeSection = document.getElementById('readme-section');
+    if (readmeSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    readmeSection.classList.add('visible-on-scroll');
+                    readmeSection.classList.remove('hidden-on-load');
+                    observer.unobserve(readmeSection);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(readmeSection);
+    } else {
+        console.warn("Element with ID 'readme-section' not found.");
+    }
+
+    const projectBoxes = document.querySelectorAll('.project-box');
+    if (projectBoxes.length > 0) {
+        const projectObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(projectBoxes).indexOf(entry.target);
+                    setTimeout(() => {
+                        entry.target.classList.add('fly-in');
+                    }, index * 200);
+                    projectObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '50px'
+        });
+
+        projectBoxes.forEach(box => {
+            projectObserver.observe(box);
+        });
+    }
+
+    fetch('https://api.github.com/repos/january1073/january1073.github.io/commits/main')
+        .then(r => r.json())
+        .then(data => {
+            const lastCommit = new Date(data.commit.committer.date);
+            const lastUpdatedElement = document.getElementById('last-updated');
+            if (lastUpdatedElement) {
+                lastUpdatedElement.textContent = lastCommit.toISOString().split('T')[0];
+            } else {
+                console.warn("Element with ID 'last-updated' not found.");
+            }
+        })
+        .catch(error => console.error('Error fetching last commit:', error));
+
+    console.log('%cHint: Try typing help() in the console 🔍', 'color: #888; font-style: italic;');
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollBtn = document.getElementById("scrollToTop");
+  if (scrollBtn) {
+    scrollBtn.style.position = "fixed";
+    scrollBtn.style.bottom = "1rem";
+    scrollBtn.style.right = "1rem";
+    scrollBtn.style.left = "auto";
+  }
+});
+  </script>
 </body>
 </html>
