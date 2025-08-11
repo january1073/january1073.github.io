@@ -36,6 +36,7 @@
   --audio-icon-on-color: #A9A9A9;
   --audio-icon-off-color: #1c1c1c;
   --divider-color: rgba(28, 28, 28, 0.3);
+  --cursor: #00FF00;
 }
 
 [data-theme="dark"] {
@@ -53,6 +54,7 @@
   --audio-icon-on-color: #004000;
   --audio-icon-off-color: #39FF14;
   --divider-color: rgba(0, 255, 0, 0.3);
+  --cursor: #00FF00;
 }
 
 .scroll-to-top {
@@ -142,7 +144,7 @@ h2 {
 }
 
 h3 {
-  color: var(--h1-color));
+  color: var(--h1-color);
   font-size: 2.3em;
   font-family: 'Lacquer', 'Courier New', monospace;
   font-weight: 400;
@@ -713,7 +715,7 @@ li:hover {
   }
 
   .video-overlay {
-  background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.5);
   }
 
   body > *:not(.video-background):not(.video-overlay) {
@@ -778,6 +780,7 @@ li:hover {
     justify-content: center;
     gap: 5px;
   }
+
   .scroll-to-top {
     right: 1rem !important;
     width: 2.5rem;
@@ -798,7 +801,6 @@ li:hover {
     width: 28px;
     height: 28px;
   }
-
 }
 
 @media only screen and (min-device-width: 1px) and (max-device-width: 1px) {
@@ -870,7 +872,7 @@ li:hover {
       <source src="media/background.webm" type="video/webm">
       <source src="media/background.mp4" type="video/mp4">
     </video>
-  <div class="video-overlay"></div>
+    <div class="video-overlay"></div>
   </div>
 
   <nav class="navbar">
@@ -892,14 +894,14 @@ li:hover {
           <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248S0 22.546 0 20.752s1.456-3.248 3.252-3.248 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"/>
         </svg>
       </a>
-      <div class="theme-toggle">[◐]</div>
+      <div class="theme-toggle" id="themeToggle">[◐]</div>
     </div>
   </nav>
 
   <h1>> whoami</h1>
   <div class="whoami">
     <div class="image-box">
-      <img src="/img/january1073.jpg" alt="portait">
+      <img src="/img/january1073.jpg" alt="portrait">
     </div>
     <div class="text-box">
       <p><code class="code-box"><strong>Lawyer</strong></code></p>
@@ -914,25 +916,25 @@ li:hover {
   <div class="featured-projects">
     <div class="project-box">
       <a href="https://medium.com/@january1073/tryhackme-disable-echo-29c3c48e54d2" target="_blank">
-        <img src="/img/thumbnail0.gif" alt="thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/200x150/cccccc/333333?text=thumbnail';">
+        <img src="/img/thumbnail0.gif" alt="TryHackMe Hide Echo thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/200x150/cccccc/333333?text=thumbnail';">
         <p>TryHackMe: Hide Echo</p>
       </a>
     </div>
     <div class="project-box">
       <a href="https://january1073.medium.com/cheating-permitted-german-federal-court-of-justice-rules-on-action-replay-ii-b1e8e051107c" target="_blank">
-        <img src="/img/thumbnail2.webp" alt="thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/200x150/cccccc/333333?text=thumbnail';">
+        <img src="/img/thumbnail2.webp" alt="Action Replay II article thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/200x150/cccccc/333333?text=thumbnail';">
         <p>Cheating Permitted? German Federal Court of Justice Rules on 'Action Replay II'</p>
       </a>
     </div>
     <div class="project-box">
       <a href="https://github.com/darkmailr" target="_blank">
-        <img src="/img/thumbnail1.webp" alt="thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/200x150/cccccc/333333?text=thumbnail';">
+        <img src="/img/thumbnail1.webp" alt="Darkmailr project thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/200x150/cccccc/333333?text=thumbnail';">
         <p>Darkmailr: Generate realistic, context-aware phishing emails – air-gapped</p>
       </a>
     </div>
     <div class="project-box">
       <a href="https://osintteam.blog/cleartext-protocols-101-how-to-connect-anonymously-to-ftp-telnet-and-rsync-2c1001dcbdb0" target="_blank">
-        <img src="/img/thumbnail3.webp" alt="thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/200x150/cccccc/333333?text=thumbnail';">
+        <img src="/img/thumbnail3.webp" alt="Cleartext Protocols article thumbnail" onerror="this.onerror=null;this.src='https://placehold.co/200x150/cccccc/333333?text=thumbnail';">
         <p>Cleartext Protocols 101: How to Connect Anonymously to FTP, Telnet, and rsync</p>
       </a>
     </div>
@@ -951,10 +953,10 @@ li:hover {
     <div class="accordion-header" id="projectsAccordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h2>ls /projects</h2>
+      <div><h2>ls /projects</h2></div>
     </div>
     <div id="projectsAccordionBody" class="accordion-body">
-      <p><a href="/projects/learnings.md"  target="_blank">Key takeaways from my projects</a></p>
+      <p><a href="/projects/learnings.md" target="_blank">Key takeaways from my projects</a></p>
       <ul>
         <li>darkmailr — Generate realistic, context-aware phishing emails – air-gapped (<a href="https://january1073.medium.com/darkmailr-generate-realistic-context-aware-phishing-emails-air-gapped-d3cc88457dab" target="_blank">intro</a>, <a href="https://github.com/darkmailr" target="_blank">repo</a>, <a href="https://github.com/darkmailr/darkmailr/blob/master/CONTRIBUTING.md" target="_blank">contributing</a>)</li>
         <li><a href="https://infosecwriteups.com/how-i-flooded-myself-hping3-against-apache-c518cbab639f" target="_blank">How I Flooded Myself — hping3 Against Apache</a></li>
@@ -968,7 +970,7 @@ li:hover {
     <div class="accordion-header" id="ctfsAccordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h2>ls /ctfs</h2>
+      <div><h2>ls /ctfs</h2></div>
     </div>
     <div id="ctfsAccordionBody" class="accordion-body">
       <ul>
@@ -981,7 +983,7 @@ li:hover {
     <div class="accordion-header" id="seriesAccordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h2>ls /100s_series</h2>
+      <div><h2>ls /100s_series</h2></div>
     </div>
     <div id="seriesAccordionBody" class="accordion-body">
       <ul>
@@ -997,7 +999,7 @@ li:hover {
     <div class="accordion-header" id="publicationsAccordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h2>ls /publications</h2>
+      <div><h2>ls /publications</h2></div>
     </div>
     <div id="publicationsAccordionBody" class="accordion-body">
       <ul>
@@ -1019,10 +1021,10 @@ li:hover {
     <div class="accordion-header" id="accordionHeader">
       <div class="accordion-arrow"><h2>[⚹]</h2></div>
       <div class="arrow-space"> </div>
-      <div></div><h2>tree /bio</h2></div>
+      <div><h2>tree /bio</h2></div>
     </div>
-  <div id="accordionBody" class="accordion-body tree">
-          <pre>
+    <div id="accordionBody" class="accordion-body tree">
+      <pre>
 bio
 ├── experience
 │   ├── Since 2015 Practicing lawyer
@@ -1047,7 +1049,8 @@ bio
     ├── Cyber Security 101
     ├── Pre Security
     └── Advent of Cyber 2024
-            </pre>
+      </pre>
+    </div>
   </div>
 
   <div class="fading-line"></div>
@@ -1101,66 +1104,72 @@ console.log(`
                                      .::!!!!!!!:.
       .!!!!!:.                      .:!!!!!!!!!!!!
       ~~~~!!!!!!.               .:!!!!!!!!!UWWW$
-          :$NWX!!:          .:!!!!!!XUWW$$$P
-          $$##WX!:      <!!!!UW$"  $$#
-          $$  $UX   :!!UW$$$   4$$*
-          ^$B  $     $$$   d$R"
-            "*$bd$     '*$$$o+#"
+          :$NWX!!:          .:!!!!!!XUWW$$P
+          $##WX!:      <!!!!UW$"  $#
+          $  $UX   :!!UW$$   4$*
+          ^$B  $     $$   d$R"
+            "*$bd$     '*$$o+#"
             """"          """""""
-
 `);
 
-const _0x4f2a = ['RkxBR3tK', 'NFY0U0NS', 'MVBUX04x', 'TkpBXzMw', 'M30='];
-const _debug = {
-    mode: false,
+const encodedFlags = ['RkxBR3tK', 'NFY0U0NS', 'MVBUX04x', 'TkpBXzMw', 'M30='];
+const debugMode = {
+    enabled: false,
     level: 0,
-    trace: function() { return this.mode && this.level > 2; }
+    shouldTrace: function() { return this.enabled && this.level > 2; }
 };
 
 function toggleTheme() {
-	const currentTheme = document.body.dataset.theme;
-	const newTheme = currentTheme === "" ? "dark" : "";
-	document.body.dataset.theme = newTheme;
-	localStorage.setItem("theme", newTheme);
-	updateVideoBackground(newTheme);
+    const body = document.body;
+    const currentTheme = body.dataset.theme || '';
+    const newTheme = currentTheme === 'dark' ? '' : 'dark';
+    body.dataset.theme = newTheme;
+
+    try {
+        localStorage.setItem('theme', newTheme);
+    } catch (e) {
+        console.warn('localStorage not available');
+    }
+
+    updateVideoBackground(newTheme);
 }
 
 function updateVideoBackground(theme) {
-	const bgVideoContainer = document.querySelector(".video-background");
-	const bgVideo = document.getElementById("bgVideo");
+    const bgVideoContainer = document.querySelector('.video-background');
+    const bgVideo = document.getElementById('bgVideo');
 
-	if (!bgVideoContainer || !bgVideo) return;
+    if (!bgVideoContainer || !bgVideo) return;
 
-	bgVideoContainer.style.display = "block";
-	bgVideo.style.opacity = "0";
-	void bgVideo.offsetWidth;
-	bgVideo.style.transition = "opacity 30s linear";
-
-	setTimeout(() => {
-		bgVideo.style.opacity = theme === "dark" ? "0.1" : "0.05";
-	}, 100);
+    bgVideoContainer.style.display = 'block';
+    bgVideo.style.opacity = '0';
+    requestAnimationFrame(() => {
+        bgVideo.style.transition = 'opacity 30s linear';
+        setTimeout(() => {
+            bgVideo.style.opacity = theme === 'dark' ? '0.1' : '0.05';
+        }, 100);
+    });
 }
 
-function _assembleSecretData() {
+function assembleHiddenFlag() {
     try {
         if (typeof window !== 'undefined' && window.location) {
-            const parts = [
-                atob(_0x4f2a[0]),
-                atob(_0x4f2a[1]),
-                atob(_0x4f2a[2]),
-                atob(_0x4f2a[3]),
-                atob(_0x4f2a[4])
-            ];
+            const parts = encodedFlags.map(flag => {
+                try {
+                    return atob(flag);
+                } catch (e) {
+                    return '';
+                }
+            });
             return parts.join('');
         }
     } catch(e) {
-        return null;
+        console.error('Error assembling flag:', e);
     }
     return null;
 }
 
 window.revealHiddenFlag = function() {
-    const hiddenData = _assembleSecretData();
+    const hiddenData = assembleHiddenFlag();
     if (hiddenData) {
         console.log('%c🚩 FLAG FOUND!', 'color: #ff6b6b; font-size: 16px; font-weight: bold;');
         console.log('%c' + hiddenData, 'color: #4ecdc4; font-size: 14px; background: #2c3e50; padding: 5px;');
@@ -1170,8 +1179,8 @@ window.revealHiddenFlag = function() {
 };
 
 setTimeout(() => {
-    if (_debug.trace()) {
-        const secretFlag = _assembleSecretData();
+    if (debugMode.shouldTrace()) {
+        const secretFlag = assembleHiddenFlag();
         console.group('%cDebugging Info', 'color: #666; font-size: 12px;');
         console.log('Secret data assembled:', secretFlag);
         console.groupEnd();
@@ -1189,21 +1198,19 @@ function setupAccordion(headerId, bodyId) {
 
     accordionHeader.addEventListener('click', () => {
         const headerRect = accordionHeader.getBoundingClientRect();
-        const isHeaderVisible = (
-            headerRect.top >= 0 &&
-            headerRect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
-        );
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const isHeaderVisible = headerRect.top >= 0 && headerRect.bottom <= viewportHeight;
 
         if (!accordionBody.classList.contains('visible')) {
             accordionBody.style.display = 'block';
             accordionBody.style.opacity = '0';
             accordionBody.style.transform = 'translateY(-5px)';
 
-            void accordionBody.offsetHeight;
-
-            accordionBody.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
-            accordionBody.style.opacity = '1';
-            accordionBody.style.transform = 'translateY(0)';
+            requestAnimationFrame(() => {
+                accordionBody.style.transition = 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out';
+                accordionBody.style.opacity = '1';
+                accordionBody.style.transform = 'translateY(0)';
+            });
 
             accordionBody.classList.add('visible');
             accordionHeader.classList.add('active');
@@ -1219,10 +1226,8 @@ function setupAccordion(headerId, bodyId) {
 
             setTimeout(() => {
                 accordionBody.style.display = 'none';
-                accordionBody.classList.remove('visible');
-                accordionBody.classList.remove('fade-out');
+                accordionBody.classList.remove('visible', 'fade-out');
                 accordionHeader.classList.remove('active');
-
                 accordionBody.style.opacity = '0';
                 accordionBody.style.transform = 'translateY(-5px)';
             }, 400);
@@ -1250,93 +1255,85 @@ window.about = function() {
     console.log('Looking for flags? Keep digging...');
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-	const savedTheme = localStorage.getItem("theme");
-	document.body.dataset.theme = savedTheme ? savedTheme : "";
-
-	const bgVideoContainer = document.querySelector(".video-background");
-	const bgVideo = document.getElementById("bgVideo");
-
-	if (bgVideoContainer && bgVideo) {
-		bgVideoContainer.style.display = "block";
-		bgVideo.style.visibility = "visible";
-		bgVideo.style.opacity = "0";
-		bgVideo.playbackRate = 0.75;
-
-		window.addEventListener('load', () => {
-			bgVideo.style.transition = "opacity 10s linear";
-
-			setTimeout(() => {
-				bgVideo.style.opacity = savedTheme === "dark" ? "0.1" : "0.05";
-			}, 1000);
-		});
-	}
-
-    const themeToggle = document.querySelector(".theme-toggle");
-    if (themeToggle) {
-        themeToggle.addEventListener("click", toggleTheme);
-    } else {
-        console.warn("Theme toggle button not found.");
+function initializeTheme() {
+    let savedTheme = '';
+    try {
+        savedTheme = localStorage.getItem('theme') || '';
+    } catch (e) {
+        console.warn('localStorage not available, using default theme');
     }
+    document.body.dataset.theme = savedTheme;
+    return savedTheme;
+}
 
+function setupVideoBackground(savedTheme) {
+    const bgVideoContainer = document.querySelector('.video-background');
+    const bgVideo = document.getElementById('bgVideo');
+
+    if (bgVideoContainer && bgVideo) {
+        bgVideoContainer.style.display = 'block';
+        bgVideo.style.visibility = 'visible';
+        bgVideo.style.opacity = '0';
+        bgVideo.playbackRate = 0.75;
+
+        window.addEventListener('load', () => {
+            bgVideo.style.transition = 'opacity 10s linear';
+            setTimeout(() => {
+                bgVideo.style.opacity = savedTheme === 'dark' ? '0.1' : '0.05';
+            }, 1000);
+        });
+    }
+}
+
+function setupAudioControl() {
     const backgroundAudio = document.getElementById('backgroundAudio');
     const audioToggle = document.getElementById('audioToggle');
-    const audioIcon = audioToggle ? audioToggle.querySelector('.audio-on-icon') : null;
 
-    if (audioToggle && backgroundAudio && audioIcon) {
-        if (backgroundAudio.paused) {
-            audioToggle.classList.add('audio-off-state');
-        } else {
-            audioToggle.classList.remove('audio-off-state');
-        }
-
+    if (audioToggle && backgroundAudio) {
+        audioToggle.classList.toggle('audio-off-state', backgroundAudio.paused);
         audioToggle.classList.add('pulsing');
+
         setTimeout(() => {
             audioToggle.classList.remove('pulsing');
         }, 2000);
 
         audioToggle.addEventListener('click', () => {
             if (backgroundAudio.paused) {
-                backgroundAudio.play().then(() => {
-                    audioToggle.classList.remove('audio-off-state');
-                    audioToggle.classList.remove('pulsing');
-                }).catch(error => {
-                    console.error("Audio playback failed:", error);
-                });
+                backgroundAudio.play()
+                    .then(() => {
+                        audioToggle.classList.remove('audio-off-state', 'pulsing');
+                    })
+                    .catch(error => {
+                        console.error('Audio playback failed:', error);
+                    });
             } else {
                 backgroundAudio.pause();
                 audioToggle.classList.add('audio-off-state');
             }
         });
     } else {
-        console.warn("Audio elements not found or SVG icon missing.");
+        console.warn('Audio elements not found');
     }
+}
 
-    setupAccordion('accordionHeader', 'accordionBody');
-    setupAccordion('projectsAccordionHeader', 'projectsAccordionBody');
-    setupAccordion('ctfsAccordionHeader', 'ctfsAccordionBody');
-    setupAccordion('seriesAccordionHeader', 'seriesAccordionBody');
-    setupAccordion('publicationsAccordionHeader', 'publicationsAccordionBody');
-
+function setupScrollToTop() {
     const scrollToTopButton = document.getElementById('scrollToTop');
-    if (scrollToTopButton) {
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollToTopButton.classList.add('visible');
-            } else {
-                scrollToTopButton.classList.remove('visible');
-            }
-        });
+    if (!scrollToTopButton) return;
 
-        scrollToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
+    const toggleVisibility = () => {
+        scrollToTopButton.classList.toggle('visible', window.pageYOffset > 300);
+    };
 
+    window.addEventListener('scroll', toggleVisibility);
+
+    scrollToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+function setupIntersectionObserver() {
     const readmeSection = document.getElementById('readme-section');
+
     if (readmeSection) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1349,11 +1346,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }, { threshold: 0.1 });
 
         observer.observe(readmeSection);
-    } else {
-        console.warn("Element with ID 'readme-section' not found.");
     }
+}
 
+function setupProjectBoxAnimation() {
     const projectBoxes = document.querySelectorAll('.project-box');
+
     if (projectBoxes.length > 0) {
         const projectObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1365,40 +1363,62 @@ document.addEventListener("DOMContentLoaded", () => {
                     projectObserver.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.2,
-            rootMargin: '50px'
-        });
+        }, { threshold: 0.2, rootMargin: '50px' });
 
         projectBoxes.forEach(box => {
             projectObserver.observe(box);
         });
     }
+}
 
-    fetch('https://api.github.com/repos/january1073/january1073.github.io/commits/main')
-        .then(r => r.json())
+function fetchLastUpdate() {
+    const apiUrl = 'https://api.github.com/repos/january1073/january1073.github.io/commits/main';
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             const lastCommit = new Date(data.commit.committer.date);
             const lastUpdatedElement = document.getElementById('last-updated');
             if (lastUpdatedElement) {
                 lastUpdatedElement.textContent = lastCommit.toISOString().split('T')[0];
-            } else {
-                console.warn("Element with ID 'last-updated' not found.");
             }
         })
-        .catch(error => console.error('Error fetching last commit:', error));
+        .catch(error => {
+            console.error('Error fetching last commit:', error);
+            const lastUpdatedElement = document.getElementById('last-updated');
+            if (lastUpdatedElement) {
+                lastUpdatedElement.textContent = 'Error loading date';
+            }
+        });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = initializeTheme();
+    setupVideoBackground(savedTheme);
+
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    setupAudioControl();
+    setupScrollToTop();
+    setupIntersectionObserver();
+    setupProjectBoxAnimation();
+    fetchLastUpdate();
+
+    setupAccordion('accordionHeader', 'accordionBody');
+    setupAccordion('projectsAccordionHeader', 'projectsAccordionBody');
+    setupAccordion('ctfsAccordionHeader', 'ctfsAccordionBody');
+    setupAccordion('seriesAccordionHeader', 'seriesAccordionBody');
+    setupAccordion('publicationsAccordionHeader', 'publicationsAccordionBody');
 
     console.log('%cHint: Try typing help() in the console 🔍', 'color: #888; font-style: italic;');
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollBtn = document.getElementById("scrollToTop");
-  if (scrollBtn) {
-    scrollBtn.style.position = "fixed";
-    scrollBtn.style.bottom = "1rem";
-    scrollBtn.style.right = "1rem";
-    scrollBtn.style.left = "auto";
-  }
 });
   </script>
 </body>
